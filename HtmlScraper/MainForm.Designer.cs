@@ -223,6 +223,7 @@ namespace HtmlScraper
             // lvProduction
             // 
             this.lvProduction.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.lvProduction.AllowColumnReorder = true;
             this.lvProduction.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderProdID,
             this.columnHeaderOrgID,
