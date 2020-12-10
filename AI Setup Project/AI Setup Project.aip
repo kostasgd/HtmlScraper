@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="17.7" version="17.7" Modules="simple" RootPath="." Language="en" Id="{1A3293A1-229E-4BF7-9844-669B92B2F199}">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_BouncyCastle.Crypto.dll" Value="..\..\..\..\.nuget\packages\bouncycastle\1.8.3.1\lib"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_ClosedXML.dll" Value="..\..\..\..\.nuget\packages\closedxml\0.95.3\lib\net46"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_DocumentFormat.OpenXml.dll" Value="..\..\..\..\.nuget\packages\documentformat.openxml\2.7.2\lib\net46"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_ExcelNumberFormat.dll" Value="..\..\..\..\.nuget\packages\excelnumberformat\1.0.10\lib\net20"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Google.Protobuf.dll" Value="..\..\..\..\.nuget\packages\google.protobuf\3.11.4\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_HtmlAgilityPack.dll" Value="..\..\..\..\.nuget\packages\htmlagilitypack\1.11.28\lib\Net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_HtmlScraper.exe" Value="..\HtmlScraper\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_HtmlScraper.exe.config" Value="..\HtmlScraper\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_K4os.Compression.LZ4.Streams.dll" Value="..\..\..\..\.nuget\packages\k4os.compression.lz4.streams\1.1.11\lib\net46"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_K4os.Compression.LZ4.dll" Value="..\..\..\..\.nuget\packages\k4os.compression.lz4\1.1.11\lib\net46"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_K4os.Hash.xxHash.dll" Value="..\..\..\..\.nuget\packages\k4os.hash.xxhash\1.0.6\lib\net46"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_MaterialDesignColors.dll" Value="..\..\..\..\.nuget\packages\materialdesigncolors\1.2.7\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_MaterialDesignThemes.Wpf.dll" Value="..\..\..\..\.nuget\packages\materialdesignthemes\3.2.0\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_MaterialSkin.dll" Value="..\..\..\..\.nuget\packages\materialskin\0.2.1\lib"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Microsoft.Toolkit.Uwp.Notifications.dll" Value="..\..\..\..\.nuget\packages\microsoft.toolkit.uwp.notifications\6.1.1\lib\net461"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_MySql.Data.dll" Value="..\..\..\..\.nuget\packages\mysql.data\8.0.22\lib\net452"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Newtonsoft.Json.dll" Value="..\..\..\..\.nuget\packages\newtonsoft.json\12.0.3\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Renci.SshNet.dll" Value="..\..\..\..\.nuget\packages\ssh.net\2016.1.0\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Buffers.dll" Value="..\..\..\..\.nuget\packages\system.buffers\4.5.1\ref\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.IO.Packaging.dll" Value="..\..\..\..\.nuget\packages\system.io.packaging\4.0.0\ref\net46"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Memory.dll" Value="..\..\..\..\.nuget\packages\system.memory\4.5.3\lib\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Numerics.Vectors.dll" Value="..\..\..\..\.nuget\packages\system.numerics.vectors\4.4.0\ref\net46"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll" Value="..\..\..\..\.nuget\packages\system.runtime.compilerservices.unsafe\4.5.2\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Runtime.WindowsRuntime.UI.Xaml.dll" Value="..\..\..\..\..\..\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.WindowsRuntime.UI.Xaml\v4.0_4.0.0.0__b77a5c561934e089"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.Runtime.WindowsRuntime.dll" Value="..\..\..\..\..\..\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Runtime.WindowsRuntime\v4.0_4.0.0.0__b77a5c561934e089"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_System.ValueTuple.dll" Value="..\..\..\..\.nuget\packages\system.valuetuple\4.5.0\ref\net47"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Ubiety.Dns.Core.dll" Value="..\..\..\..\.nuget\packages\mysql.data\8.0.22\lib\net452"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebDriver.Support.dll" Value="..\..\..\..\.nuget\packages\selenium.support\3.141.0\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_WebDriver.dll" Value="..\..\..\..\.nuget\packages\selenium.webdriver\3.141.0\lib\net45"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.AI.MachineLearning.MachineLearningContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.AI.MachineLearning.Preview.MachineLearningPreviewContract.win" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Activation.ActivatedEventsContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Activation.ActivationCameraSettingsContract." Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Activation.ContactActivatedEventsContract.wi" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Activation.WebUISearchActivatedEventsContrac" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Background.BackgroundAlarmApplicationContrac" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Calls.Background.CallsBackgroundContract.win" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Calls.CallsPhoneContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Calls.CallsVoipContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Calls.LockScreenCallContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingC" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.FullTrustAppContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Preview.InkWorkspace.PreviewInkWorkspaceCont" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Preview.Notes.PreviewNotesContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Resources.Management.ResourceIndexerContract" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Search.Core.SearchCoreContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Search.SearchContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.SocialInfo.SocialInfoContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.StartupTaskContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Wallet.WalletContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Devices.Custom.CustomDeviceContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Devices.DevicesLowLevelContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Devices.Portable.PortableDeviceContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Devices.Printers.Extensions.ExtensionsContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Devices.Printers.PrintersContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Devices.Scanners.ScannerDeviceContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Devices.SmartCards.SmartCardBackgroundTriggerContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Devices.SmartCards.SmartCardEmulatorContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Devices.Sms.LegacySmsApiContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Embedded.DeviceLockdown.DeviceLockdownContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Foundation.FoundationContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Foundation.UniversalApiContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Gaming.Input.GamingInputPreviewContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Gaming.Preview.GamesEnumerationContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Gaming.UI.GameChatOverlayContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Gaming.UI.GamingUIProviderContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Gaming.XboxLive.StorageApiContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Globalization.GlobalizationJapanesePhoneticAnalyzerContract.w" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Graphics.Printing3D.Printing3DContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Management.Deployment.Preview.DeploymentPreviewContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Management.Workplace.WorkplaceSettingsContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Media.AppBroadcasting.AppBroadcastingContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Media.AppRecording.AppRecordingContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Media.Capture.AppBroadcastContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Media.Capture.AppCaptureContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Media.Capture.AppCaptureMetadataContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Media.Capture.CameraCaptureUIContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Media.Capture.GameBarContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Media.Devices.CallControlContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Media.MediaControlContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Media.Playlists.PlaylistsContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Media.Protection.ProtectionRenewalContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Networking.Connectivity.WwanContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Networking.NetworkOperators.LegacyNetworkOperatorsContract.wi" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract.WinMD" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Networking.Sockets.ControlChannelTriggerContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Networking.XboxLive.XboxLiveSecureSocketsContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Perception.Automation.Core.PerceptionAutomationCoreContract.w" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Phone.PhoneContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Phone.StartScreen.DualSimTileContract.WinMD" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Security.EnterpriseData.EnterpriseDataContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Security.ExchangeActiveSyncProvisioning.EasContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Services.Maps.GuidanceContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Services.Maps.LocalSearchContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Services.Store.StoreContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Services.TargetedContent.TargetedContentContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Storage.Provider.CloudFilesContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.System.Profile.ProfileHardwareTokenContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.System.Profile.ProfileRetailInfoContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.System.Profile.ProfileSharedModeContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.System.Profile.SystemManufacturers.SystemManufacturersContrac" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.System.SystemManagementContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.System.UserProfile.UserProfileContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.System.UserProfile.UserProfileLockScreenContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.UI.ApplicationSettings.ApplicationsSettingsContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.UI.Core.AnimationMetrics.AnimationMetricsContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.UI.Core.CoreWindowDialogsContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.UI.Shell.SecurityAppManagerContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.UI.ViewManagement.ViewManagementViewScalingContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.UI.WebUI.Core.WebUICommandBarContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.UI.Xaml.Core.Direct.XamlDirectContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.UI.Xaml.Hosting.HostingContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Zstandard.Net.dll" Value="..\..\..\..\.nuget\packages\mysql.data\8.0.22\lib\net452"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_windows.winmd" Value="..\..\..\..\.nuget\packages\microsoft.windows.sdk.contracts\10.0.17763.1000\ref\netstandard2.0"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_BouncyCastle.Crypto.dll" Value="BouncyCastle.Crypto.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_ClosedXML.dll" Value="ClosedXML.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_DocumentFormat.OpenXml.dll" Value="DocumentFormat.OpenXml.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_ExcelNumberFormat.dll" Value="ExcelNumberFormat.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Google.Protobuf.dll" Value="Google.Protobuf.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_HtmlAgilityPack.dll" Value="HtmlAgilityPack.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_HtmlScraper.exe" Value="HtmlScraper.exe"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_HtmlScraper.exe.config" Value="HtmlScraper.exe.config"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_K4os.Compression.LZ4.Streams.dll" Value="K4os.Compression.LZ4.Streams.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_K4os.Compression.LZ4.dll" Value="K4os.Compression.LZ4.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_K4os.Hash.xxHash.dll" Value="K4os.Hash.xxHash.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_MaterialDesignColors.dll" Value="MaterialDesignColors.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_MaterialDesignThemes.Wpf.dll" Value="MaterialDesignThemes.Wpf.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_MaterialSkin.dll" Value="MaterialSkin.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Toolkit.Uwp.Notifications.dll" Value="Microsoft.Toolkit.Uwp.Notifications.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_MySql.Data.dll" Value="MySql.Data.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Newtonsoft.Json.dll" Value="Newtonsoft.Json.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Renci.SshNet.dll" Value="Renci.SshNet.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Buffers.dll" Value="System.Buffers.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.IO.Packaging.dll" Value="System.IO.Packaging.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Memory.dll" Value="System.Memory.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Numerics.Vectors.dll" Value="System.Numerics.Vectors.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll" Value="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.WindowsRuntime.UI.Xaml.dll" Value="System.Runtime.WindowsRuntime.UI.Xaml.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.WindowsRuntime.dll" Value="System.Runtime.WindowsRuntime.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_System.ValueTuple.dll" Value="System.ValueTuple.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Ubiety.Dns.Core.dll" Value="Ubiety.Dns.Core.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_WebDriver.Support.dll" Value="WebDriver.Support.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_WebDriver.dll" Value="WebDriver.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.AI.MachineLearning.MachineLearningContract.winmd" Value="Windows.AI.MachineLearning.MachineLearningContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.AI.MachineLearning.Preview.MachineLearningPreviewContract.win" Value="Windows.AI.MachineLearning.Preview.MachineLearningPreviewContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Activation.ActivatedEventsContract.winmd" Value="Windows.ApplicationModel.Activation.ActivatedEventsContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Activation.ActivationCameraSettingsContract." Value="Windows.ApplicationModel.Activation.ActivationCameraSettingsContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Activation.ContactActivatedEventsContract.wi" Value="Windows.ApplicationModel.Activation.ContactActivatedEventsContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Activation.WebUISearchActivatedEventsContrac" Value="Windows.ApplicationModel.Activation.WebUISearchActivatedEventsContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Background.BackgroundAlarmApplicationContrac" Value="Windows.ApplicationModel.Background.BackgroundAlarmApplicationContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Calls.Background.CallsBackgroundContract.win" Value="Windows.ApplicationModel.Calls.Background.CallsBackgroundContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Calls.CallsPhoneContract.winmd" Value="Windows.ApplicationModel.Calls.CallsPhoneContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Calls.CallsVoipContract.winmd" Value="Windows.ApplicationModel.Calls.CallsVoipContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Calls.LockScreenCallContract.winmd" Value="Windows.ApplicationModel.Calls.LockScreenCallContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingC" Value="Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.FullTrustAppContract.winmd" Value="Windows.ApplicationModel.FullTrustAppContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Preview.InkWorkspace.PreviewInkWorkspaceCont" Value="Windows.ApplicationModel.Preview.InkWorkspace.PreviewInkWorkspaceContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Preview.Notes.PreviewNotesContract.winmd" Value="Windows.ApplicationModel.Preview.Notes.PreviewNotesContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Resources.Management.ResourceIndexerContract" Value="Windows.ApplicationModel.Resources.Management.ResourceIndexerContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Search.Core.SearchCoreContract.winmd" Value="Windows.ApplicationModel.Search.Core.SearchCoreContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Search.SearchContract.winmd" Value="Windows.ApplicationModel.Search.SearchContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.SocialInfo.SocialInfoContract.winmd" Value="Windows.ApplicationModel.SocialInfo.SocialInfoContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.StartupTaskContract.winmd" Value="Windows.ApplicationModel.StartupTaskContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Wallet.WalletContract.winmd" Value="Windows.ApplicationModel.Wallet.WalletContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Custom.CustomDeviceContract.winmd" Value="Windows.Devices.Custom.CustomDeviceContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.DevicesLowLevelContract.winmd" Value="Windows.Devices.DevicesLowLevelContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Portable.PortableDeviceContract.winmd" Value="Windows.Devices.Portable.PortableDeviceContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Printers.Extensions.ExtensionsContract.winmd" Value="Windows.Devices.Printers.Extensions.ExtensionsContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Printers.PrintersContract.winmd" Value="Windows.Devices.Printers.PrintersContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Scanners.ScannerDeviceContract.winmd" Value="Windows.Devices.Scanners.ScannerDeviceContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.SmartCards.SmartCardBackgroundTriggerContract.winmd" Value="Windows.Devices.SmartCards.SmartCardBackgroundTriggerContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.SmartCards.SmartCardEmulatorContract.winmd" Value="Windows.Devices.SmartCards.SmartCardEmulatorContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Sms.LegacySmsApiContract.winmd" Value="Windows.Devices.Sms.LegacySmsApiContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Embedded.DeviceLockdown.DeviceLockdownContract.winmd" Value="Windows.Embedded.DeviceLockdown.DeviceLockdownContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Foundation.FoundationContract.winmd" Value="Windows.Foundation.FoundationContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Foundation.UniversalApiContract.winmd" Value="Windows.Foundation.UniversalApiContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Gaming.Input.GamingInputPreviewContract.winmd" Value="Windows.Gaming.Input.GamingInputPreviewContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Gaming.Preview.GamesEnumerationContract.winmd" Value="Windows.Gaming.Preview.GamesEnumerationContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Gaming.UI.GameChatOverlayContract.winmd" Value="Windows.Gaming.UI.GameChatOverlayContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Gaming.UI.GamingUIProviderContract.winmd" Value="Windows.Gaming.UI.GamingUIProviderContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Gaming.XboxLive.StorageApiContract.winmd" Value="Windows.Gaming.XboxLive.StorageApiContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Globalization.GlobalizationJapanesePhoneticAnalyzerContract.w" Value="Windows.Globalization.GlobalizationJapanesePhoneticAnalyzerContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Graphics.Printing3D.Printing3DContract.winmd" Value="Windows.Graphics.Printing3D.Printing3DContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Management.Deployment.Preview.DeploymentPreviewContract.winmd" Value="Windows.Management.Deployment.Preview.DeploymentPreviewContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Management.Workplace.WorkplaceSettingsContract.winmd" Value="Windows.Management.Workplace.WorkplaceSettingsContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.AppBroadcasting.AppBroadcastingContract.winmd" Value="Windows.Media.AppBroadcasting.AppBroadcastingContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.AppRecording.AppRecordingContract.winmd" Value="Windows.Media.AppRecording.AppRecordingContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Capture.AppBroadcastContract.winmd" Value="Windows.Media.Capture.AppBroadcastContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Capture.AppCaptureContract.winmd" Value="Windows.Media.Capture.AppCaptureContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Capture.AppCaptureMetadataContract.winmd" Value="Windows.Media.Capture.AppCaptureMetadataContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Capture.CameraCaptureUIContract.winmd" Value="Windows.Media.Capture.CameraCaptureUIContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Capture.GameBarContract.winmd" Value="Windows.Media.Capture.GameBarContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Devices.CallControlContract.winmd" Value="Windows.Media.Devices.CallControlContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.MediaControlContract.winmd" Value="Windows.Media.MediaControlContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Playlists.PlaylistsContract.winmd" Value="Windows.Media.Playlists.PlaylistsContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Protection.ProtectionRenewalContract.winmd" Value="Windows.Media.Protection.ProtectionRenewalContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Networking.Connectivity.WwanContract.winmd" Value="Windows.Networking.Connectivity.WwanContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Networking.NetworkOperators.LegacyNetworkOperatorsContract.wi" Value="Windows.Networking.NetworkOperators.LegacyNetworkOperatorsContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract.WinMD" Value="Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract.WinMD"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Networking.Sockets.ControlChannelTriggerContract.winmd" Value="Windows.Networking.Sockets.ControlChannelTriggerContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Networking.XboxLive.XboxLiveSecureSocketsContract.winmd" Value="Windows.Networking.XboxLive.XboxLiveSecureSocketsContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Perception.Automation.Core.PerceptionAutomationCoreContract.w" Value="Windows.Perception.Automation.Core.PerceptionAutomationCoreContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Phone.PhoneContract.winmd" Value="Windows.Phone.PhoneContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Phone.StartScreen.DualSimTileContract.WinMD" Value="Windows.Phone.StartScreen.DualSimTileContract.WinMD"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Security.EnterpriseData.EnterpriseDataContract.winmd" Value="Windows.Security.EnterpriseData.EnterpriseDataContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Security.ExchangeActiveSyncProvisioning.EasContract.winmd" Value="Windows.Security.ExchangeActiveSyncProvisioning.EasContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Services.Maps.GuidanceContract.winmd" Value="Windows.Services.Maps.GuidanceContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Services.Maps.LocalSearchContract.winmd" Value="Windows.Services.Maps.LocalSearchContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Services.Store.StoreContract.winmd" Value="Windows.Services.Store.StoreContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Services.TargetedContent.TargetedContentContract.winmd" Value="Windows.Services.TargetedContent.TargetedContentContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Storage.Provider.CloudFilesContract.winmd" Value="Windows.Storage.Provider.CloudFilesContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.System.Profile.ProfileHardwareTokenContract.winmd" Value="Windows.System.Profile.ProfileHardwareTokenContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.System.Profile.ProfileRetailInfoContract.winmd" Value="Windows.System.Profile.ProfileRetailInfoContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.System.Profile.ProfileSharedModeContract.winmd" Value="Windows.System.Profile.ProfileSharedModeContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.System.Profile.SystemManufacturers.SystemManufacturersContrac" Value="Windows.System.Profile.SystemManufacturers.SystemManufacturersContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.System.SystemManagementContract.winmd" Value="Windows.System.SystemManagementContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.System.UserProfile.UserProfileContract.winmd" Value="Windows.System.UserProfile.UserProfileContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.System.UserProfile.UserProfileLockScreenContract.winmd" Value="Windows.System.UserProfile.UserProfileLockScreenContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.ApplicationSettings.ApplicationsSettingsContract.winmd" Value="Windows.UI.ApplicationSettings.ApplicationsSettingsContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.Core.AnimationMetrics.AnimationMetricsContract.winmd" Value="Windows.UI.Core.AnimationMetrics.AnimationMetricsContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.Core.CoreWindowDialogsContract.winmd" Value="Windows.UI.Core.CoreWindowDialogsContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.Shell.SecurityAppManagerContract.winmd" Value="Windows.UI.Shell.SecurityAppManagerContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.ViewManagement.ViewManagementViewScalingContract.winmd" Value="Windows.UI.ViewManagement.ViewManagementViewScalingContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.WebUI.Core.WebUICommandBarContract.winmd" Value="Windows.UI.WebUI.Core.WebUICommandBarContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.Xaml.Core.Direct.XamlDirectContract.winmd" Value="Windows.UI.Xaml.Core.Direct.XamlDirectContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.Xaml.Hosting.HostingContract.winmd" Value="Windows.UI.Xaml.Hosting.HostingContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd" Value="Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Zstandard.Net.dll" Value="Zstandard.Net.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_windows.winmd" Value="windows.winmd"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="Manufacturer" Value="Konstantinos Georgiadis"/>
+    <ROW Property="ProductCode" Value="1033:{DBB3183B-CC89-4610-866C-62BF82F5B0C0} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="ScrapMeNow"/>
+    <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{6DFB33A0-37FA-4ED2-9C72-90153A24FDE1}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="HtmlScraper_Dir" Directory_Parent="APPDIR" DefaultDir="HTMLSC~1|HtmlScraper"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="APPDIR" ComponentId="{C9FEC493-741B-4CA9-B802-A2BFE27B0185}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="HtmlScraper_PrimaryOutput" ComponentId="{EC81274B-96D5-427F-B33B-A85D9B6D0925}" Directory_="HtmlScraper_Dir" Attributes="0" KeyPath="HtmlScraper.exe"/>
+    <ROW Component="HtmlScraper_References" ComponentId="{B3C051B6-5C09-4999-8A38-250F322E4638}" Directory_="HtmlScraper_Dir" Attributes="0" KeyPath="System.Runtime.WindowsRuntime.UI.Xaml.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{B8549855-CFE2-410B-8D32-91EE6F7391A5}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{486311B5-F66B-4CEB-8EA8-43125C5206F8}" Directory_="SHORTCUTDIR" Attributes="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="HtmlScraper.exe" Component_="HtmlScraper_PrimaryOutput" FileName="HTMLSC~2.EXE|[|AI_PROPPATH_FILENAME_PERBUILD_HtmlScraper.exe]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_HtmlScraper.exe&gt;" SelfReg="false" DigSign="true"/>
+    <ROW File="HtmlScraper.exe.config" Component_="HtmlScraper_PrimaryOutput" FileName="HTMLSC~2.CON|[|AI_PROPPATH_FILENAME_PERBUILD_HtmlScraper.exe.config]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_HtmlScraper.exe.config&gt;" SelfReg="false"/>
+    <ROW File="BouncyCastle.Crypto.dll" Component_="HtmlScraper_References" FileName="BOUNCY~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_BouncyCastle.Crypto.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_BouncyCastle.Crypto.dll&gt;" SelfReg="false"/>
+    <ROW File="ClosedXML.dll" Component_="HtmlScraper_References" FileName="CLOSED~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_ClosedXML.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_ClosedXML.dll&gt;" SelfReg="false"/>
+    <ROW File="DocumentFormat.OpenXml.dll" Component_="HtmlScraper_References" FileName="DOCUME~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_DocumentFormat.OpenXml.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_DocumentFormat.OpenXml.dll&gt;" SelfReg="false"/>
+    <ROW File="ExcelNumberFormat.dll" Component_="HtmlScraper_References" FileName="EXCELN~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_ExcelNumberFormat.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_ExcelNumberFormat.dll&gt;" SelfReg="false"/>
+    <ROW File="Google.Protobuf.dll" Component_="HtmlScraper_References" FileName="GOOGLE~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Google.Protobuf.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Google.Protobuf.dll&gt;" SelfReg="false"/>
+    <ROW File="HtmlAgilityPack.dll" Component_="HtmlScraper_References" FileName="HTMLAG~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_HtmlAgilityPack.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_HtmlAgilityPack.dll&gt;" SelfReg="false"/>
+    <ROW File="K4os.Compression.LZ4.dll" Component_="HtmlScraper_References" FileName="K4OSCO~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_K4os.Compression.LZ4.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_K4os.Compression.LZ4.dll&gt;" SelfReg="false"/>
+    <ROW File="K4os.Compression.LZ4.Streams.dll" Component_="HtmlScraper_References" FileName="K4OSCO~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_K4os.Compression.LZ4.Streams.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_K4os.Compression.LZ4.Streams.dll&gt;" SelfReg="false"/>
+    <ROW File="K4os.Hash.xxHash.dll" Component_="HtmlScraper_References" FileName="K4OSHA~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_K4os.Hash.xxHash.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_K4os.Hash.xxHash.dll&gt;" SelfReg="false"/>
+    <ROW File="MaterialDesignColors.dll" Component_="HtmlScraper_References" FileName="MATERI~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_MaterialDesignColors.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_MaterialDesignColors.dll&gt;" SelfReg="false"/>
+    <ROW File="MaterialDesignThemes.Wpf.dll" Component_="HtmlScraper_References" FileName="MATERI~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_MaterialDesignThemes.Wpf.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_MaterialDesignThemes.Wpf.dll&gt;" SelfReg="false"/>
+    <ROW File="MaterialSkin.dll" Component_="HtmlScraper_References" FileName="MATERI~4.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_MaterialSkin.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_MaterialSkin.dll&gt;" SelfReg="false"/>
+    <ROW File="Microsoft.Toolkit.Uwp.Notifications.dll" Component_="HtmlScraper_References" FileName="MICROS~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Toolkit.Uwp.Notifications.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Microsoft.Toolkit.Uwp.Notifications.dll&gt;" SelfReg="false"/>
+    <ROW File="MySql.Data.dll" Component_="HtmlScraper_References" FileName="MYSQLD~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_MySql.Data.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_MySql.Data.dll&gt;" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="HtmlScraper_References" FileName="NEWTON~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Newtonsoft.Json.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Newtonsoft.Json.dll&gt;" SelfReg="false"/>
+    <ROW File="Renci.SshNet.dll" Component_="HtmlScraper_References" FileName="RENCIS~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Renci.SshNet.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Renci.SshNet.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Buffers.dll" Component_="HtmlScraper_References" FileName="SYSTEM~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Buffers.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Buffers.dll&gt;" SelfReg="false"/>
+    <ROW File="System.IO.Packaging.dll" Component_="HtmlScraper_References" FileName="SYSTEM~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.IO.Packaging.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.IO.Packaging.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Memory.dll" Component_="HtmlScraper_References" FileName="SYSTEM~4.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Memory.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Memory.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Numerics.Vectors.dll" Component_="HtmlScraper_References" FileName="SYSTEM~5.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Numerics.Vectors.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Numerics.Vectors.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="HtmlScraper_References" FileName="SYSTEM~6.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll&gt;" SelfReg="false"/>
+    <ROW File="System.ValueTuple.dll" Component_="HtmlScraper_References" FileName="SYSTEM~7.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.ValueTuple.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.ValueTuple.dll&gt;" SelfReg="false"/>
+    <ROW File="Ubiety.Dns.Core.dll" Component_="HtmlScraper_References" FileName="UBIETY~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Ubiety.Dns.Core.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Ubiety.Dns.Core.dll&gt;" SelfReg="false"/>
+    <ROW File="WebDriver.dll" Component_="HtmlScraper_References" FileName="WEBDRI~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_WebDriver.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_WebDriver.dll&gt;" SelfReg="false"/>
+    <ROW File="WebDriver.Support.dll" Component_="HtmlScraper_References" FileName="WEBDRI~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_WebDriver.Support.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_WebDriver.Support.dll&gt;" SelfReg="false"/>
+    <ROW File="Windows.AI.MachineLearning.MachineLearningContract.winmd" Component_="HtmlScraper_References" FileName="WINDOW~2.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.AI.MachineLearning.MachineLearningContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.AI.MachineLearning.MachineLearningContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.AI.MachineLearning.Preview.MachineLearningPreviewContract.win" Component_="HtmlScraper_References" FileName="WINDOW~3.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.AI.MachineLearning.Preview.MachineLearningPreviewContract.win]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.AI.MachineLearning.Preview.MachineLearningPreviewContract.win&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.Activation.ActivatedEventsContract.winmd" Component_="HtmlScraper_References" FileName="WINDOW~4.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Activation.ActivatedEventsContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.Activation.ActivatedEventsContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.Activation.ActivationCameraSettingsContract." Component_="HtmlScraper_References" FileName="WINDOW~5.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Activation.ActivationCameraSettingsContract.]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.Activation.ActivationCameraSettingsContract.&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.Activation.ContactActivatedEventsContract.wi" Component_="HtmlScraper_References" FileName="WINDOW~6.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Activation.ContactActivatedEventsContract.wi]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.Activation.ContactActivatedEventsContract.wi&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.Activation.WebUISearchActivatedEventsContrac" Component_="HtmlScraper_References" FileName="WINDOW~7.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Activation.WebUISearchActivatedEventsContrac]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.Activation.WebUISearchActivatedEventsContrac&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.Background.BackgroundAlarmApplicationContrac" Component_="HtmlScraper_References" FileName="WINDOW~8.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Background.BackgroundAlarmApplicationContrac]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.Background.BackgroundAlarmApplicationContrac&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.Calls.Background.CallsBackgroundContract.win" Component_="HtmlScraper_References" FileName="WINDOW~9.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Calls.Background.CallsBackgroundContract.win]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.Calls.Background.CallsBackgroundContract.win&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.Calls.CallsPhoneContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~10.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Calls.CallsPhoneContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.Calls.CallsPhoneContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.Calls.CallsVoipContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~11.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Calls.CallsVoipContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.Calls.CallsVoipContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.Calls.LockScreenCallContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~12.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Calls.LockScreenCallContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.Calls.LockScreenCallContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingC" Component_="HtmlScraper_References" FileName="WINDO~13.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingC]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingC&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.FullTrustAppContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~14.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.FullTrustAppContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.FullTrustAppContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.Preview.InkWorkspace.PreviewInkWorkspaceCont" Component_="HtmlScraper_References" FileName="WINDO~15.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Preview.InkWorkspace.PreviewInkWorkspaceCont]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.Preview.InkWorkspace.PreviewInkWorkspaceCont&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.Preview.Notes.PreviewNotesContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~16.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Preview.Notes.PreviewNotesContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.Preview.Notes.PreviewNotesContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.Resources.Management.ResourceIndexerContract" Component_="HtmlScraper_References" FileName="WINDO~17.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Resources.Management.ResourceIndexerContract]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.Resources.Management.ResourceIndexerContract&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.Search.Core.SearchCoreContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~18.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Search.Core.SearchCoreContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.Search.Core.SearchCoreContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.Search.SearchContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~19.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Search.SearchContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.Search.SearchContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.SocialInfo.SocialInfoContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~20.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.SocialInfo.SocialInfoContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.SocialInfo.SocialInfoContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.StartupTaskContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~21.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.StartupTaskContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.StartupTaskContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.ApplicationModel.Wallet.WalletContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~22.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Wallet.WalletContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.ApplicationModel.Wallet.WalletContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Devices.Custom.CustomDeviceContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~23.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Custom.CustomDeviceContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Devices.Custom.CustomDeviceContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Devices.DevicesLowLevelContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~24.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.DevicesLowLevelContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Devices.DevicesLowLevelContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Devices.Portable.PortableDeviceContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~25.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Portable.PortableDeviceContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Devices.Portable.PortableDeviceContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Devices.Printers.Extensions.ExtensionsContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~26.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Printers.Extensions.ExtensionsContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Devices.Printers.Extensions.ExtensionsContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Devices.Printers.PrintersContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~27.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Printers.PrintersContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Devices.Printers.PrintersContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Devices.Scanners.ScannerDeviceContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~28.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Scanners.ScannerDeviceContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Devices.Scanners.ScannerDeviceContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Devices.SmartCards.SmartCardBackgroundTriggerContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~29.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.SmartCards.SmartCardBackgroundTriggerContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Devices.SmartCards.SmartCardBackgroundTriggerContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Devices.SmartCards.SmartCardEmulatorContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~30.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.SmartCards.SmartCardEmulatorContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Devices.SmartCards.SmartCardEmulatorContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Devices.Sms.LegacySmsApiContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~31.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Sms.LegacySmsApiContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Devices.Sms.LegacySmsApiContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Embedded.DeviceLockdown.DeviceLockdownContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~32.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Embedded.DeviceLockdown.DeviceLockdownContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Embedded.DeviceLockdown.DeviceLockdownContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Foundation.FoundationContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~33.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Foundation.FoundationContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Foundation.FoundationContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Foundation.UniversalApiContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~34.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Foundation.UniversalApiContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Foundation.UniversalApiContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Gaming.Input.GamingInputPreviewContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~35.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Gaming.Input.GamingInputPreviewContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Gaming.Input.GamingInputPreviewContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Gaming.Preview.GamesEnumerationContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~36.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Gaming.Preview.GamesEnumerationContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Gaming.Preview.GamesEnumerationContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Gaming.UI.GameChatOverlayContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~37.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Gaming.UI.GameChatOverlayContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Gaming.UI.GameChatOverlayContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Gaming.UI.GamingUIProviderContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~38.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Gaming.UI.GamingUIProviderContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Gaming.UI.GamingUIProviderContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Gaming.XboxLive.StorageApiContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~39.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Gaming.XboxLive.StorageApiContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Gaming.XboxLive.StorageApiContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Globalization.GlobalizationJapanesePhoneticAnalyzerContract.w" Component_="HtmlScraper_References" FileName="WINDO~40.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Globalization.GlobalizationJapanesePhoneticAnalyzerContract.w]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Globalization.GlobalizationJapanesePhoneticAnalyzerContract.w&gt;" SelfReg="false"/>
+    <ROW File="Windows.Graphics.Printing3D.Printing3DContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~41.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Graphics.Printing3D.Printing3DContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Graphics.Printing3D.Printing3DContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Management.Deployment.Preview.DeploymentPreviewContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~42.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Management.Deployment.Preview.DeploymentPreviewContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Management.Deployment.Preview.DeploymentPreviewContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Management.Workplace.WorkplaceSettingsContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~43.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Management.Workplace.WorkplaceSettingsContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Management.Workplace.WorkplaceSettingsContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Media.AppBroadcasting.AppBroadcastingContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~44.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.AppBroadcasting.AppBroadcastingContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Media.AppBroadcasting.AppBroadcastingContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Media.AppRecording.AppRecordingContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~45.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.AppRecording.AppRecordingContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Media.AppRecording.AppRecordingContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Media.Capture.AppBroadcastContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~46.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Capture.AppBroadcastContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Media.Capture.AppBroadcastContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Media.Capture.AppCaptureContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~47.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Capture.AppCaptureContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Media.Capture.AppCaptureContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Media.Capture.AppCaptureMetadataContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~48.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Capture.AppCaptureMetadataContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Media.Capture.AppCaptureMetadataContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Media.Capture.CameraCaptureUIContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~49.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Capture.CameraCaptureUIContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Media.Capture.CameraCaptureUIContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Media.Capture.GameBarContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~50.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Capture.GameBarContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Media.Capture.GameBarContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Media.Devices.CallControlContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~51.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Devices.CallControlContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Media.Devices.CallControlContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Media.MediaControlContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~52.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.MediaControlContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Media.MediaControlContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Media.Playlists.PlaylistsContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~53.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Playlists.PlaylistsContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Media.Playlists.PlaylistsContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Media.Protection.ProtectionRenewalContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~54.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Protection.ProtectionRenewalContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Media.Protection.ProtectionRenewalContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Networking.Connectivity.WwanContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~55.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Networking.Connectivity.WwanContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Networking.Connectivity.WwanContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Networking.NetworkOperators.LegacyNetworkOperatorsContract.wi" Component_="HtmlScraper_References" FileName="WINDO~56.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Networking.NetworkOperators.LegacyNetworkOperatorsContract.wi]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Networking.NetworkOperators.LegacyNetworkOperatorsContract.wi&gt;" SelfReg="false"/>
+    <ROW File="Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract.WinMD" Component_="HtmlScraper_References" FileName="WINDO~57.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract.WinMD]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract.WinMD&gt;" SelfReg="false"/>
+    <ROW File="Windows.Networking.Sockets.ControlChannelTriggerContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~58.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Networking.Sockets.ControlChannelTriggerContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Networking.Sockets.ControlChannelTriggerContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Networking.XboxLive.XboxLiveSecureSocketsContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~59.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Networking.XboxLive.XboxLiveSecureSocketsContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Networking.XboxLive.XboxLiveSecureSocketsContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Perception.Automation.Core.PerceptionAutomationCoreContract.w" Component_="HtmlScraper_References" FileName="WINDO~60.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Perception.Automation.Core.PerceptionAutomationCoreContract.w]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Perception.Automation.Core.PerceptionAutomationCoreContract.w&gt;" SelfReg="false"/>
+    <ROW File="Windows.Phone.PhoneContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~61.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Phone.PhoneContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Phone.PhoneContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Phone.StartScreen.DualSimTileContract.WinMD" Component_="HtmlScraper_References" FileName="WINDO~62.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Phone.StartScreen.DualSimTileContract.WinMD]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Phone.StartScreen.DualSimTileContract.WinMD&gt;" SelfReg="false"/>
+    <ROW File="Windows.Security.EnterpriseData.EnterpriseDataContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~63.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Security.EnterpriseData.EnterpriseDataContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Security.EnterpriseData.EnterpriseDataContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Security.ExchangeActiveSyncProvisioning.EasContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~64.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Security.ExchangeActiveSyncProvisioning.EasContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Security.ExchangeActiveSyncProvisioning.EasContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Services.Maps.GuidanceContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~65.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Services.Maps.GuidanceContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Services.Maps.GuidanceContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Services.Maps.LocalSearchContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~66.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Services.Maps.LocalSearchContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Services.Maps.LocalSearchContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Services.Store.StoreContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~67.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Services.Store.StoreContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Services.Store.StoreContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Services.TargetedContent.TargetedContentContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~68.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Services.TargetedContent.TargetedContentContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Services.TargetedContent.TargetedContentContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Storage.Provider.CloudFilesContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~69.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Storage.Provider.CloudFilesContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Storage.Provider.CloudFilesContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.System.Profile.ProfileHardwareTokenContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~70.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.System.Profile.ProfileHardwareTokenContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.System.Profile.ProfileHardwareTokenContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.System.Profile.ProfileRetailInfoContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~71.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.System.Profile.ProfileRetailInfoContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.System.Profile.ProfileRetailInfoContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.System.Profile.ProfileSharedModeContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~72.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.System.Profile.ProfileSharedModeContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.System.Profile.ProfileSharedModeContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.System.Profile.SystemManufacturers.SystemManufacturersContrac" Component_="HtmlScraper_References" FileName="WINDO~73.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.System.Profile.SystemManufacturers.SystemManufacturersContrac]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.System.Profile.SystemManufacturers.SystemManufacturersContrac&gt;" SelfReg="false"/>
+    <ROW File="Windows.System.SystemManagementContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~74.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.System.SystemManagementContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.System.SystemManagementContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.System.UserProfile.UserProfileContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~75.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.System.UserProfile.UserProfileContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.System.UserProfile.UserProfileContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.System.UserProfile.UserProfileLockScreenContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~76.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.System.UserProfile.UserProfileLockScreenContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.System.UserProfile.UserProfileLockScreenContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.UI.ApplicationSettings.ApplicationsSettingsContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~77.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.ApplicationSettings.ApplicationsSettingsContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.UI.ApplicationSettings.ApplicationsSettingsContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.UI.Core.AnimationMetrics.AnimationMetricsContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~78.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.Core.AnimationMetrics.AnimationMetricsContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.UI.Core.AnimationMetrics.AnimationMetricsContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.UI.Core.CoreWindowDialogsContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~79.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.Core.CoreWindowDialogsContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.UI.Core.CoreWindowDialogsContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.UI.Shell.SecurityAppManagerContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~80.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.Shell.SecurityAppManagerContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.UI.Shell.SecurityAppManagerContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.UI.ViewManagement.ViewManagementViewScalingContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~81.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.ViewManagement.ViewManagementViewScalingContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.UI.ViewManagement.ViewManagementViewScalingContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.UI.WebUI.Core.WebUICommandBarContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~82.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.WebUI.Core.WebUICommandBarContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.UI.WebUI.Core.WebUICommandBarContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.UI.Xaml.Core.Direct.XamlDirectContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~83.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.Xaml.Core.Direct.XamlDirectContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.UI.Xaml.Core.Direct.XamlDirectContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.UI.Xaml.Hosting.HostingContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~84.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.Xaml.Hosting.HostingContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.UI.Xaml.Hosting.HostingContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd" Component_="HtmlScraper_References" FileName="WINDO~85.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd&gt;" SelfReg="false"/>
+    <ROW File="windows.winmd" Component_="HtmlScraper_References" FileName="WINDO~86.WIN|[|AI_PROPPATH_FILENAME_PERBUILD_windows.winmd]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_windows.winmd&gt;" SelfReg="false"/>
+    <ROW File="Zstandard.Net.dll" Component_="HtmlScraper_References" FileName="ZSTAND~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Zstandard.Net.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Zstandard.Net.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Runtime.WindowsRuntime.dll" Component_="HtmlScraper_References" FileName="SYSTEM~8.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.WindowsRuntime.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Runtime.WindowsRuntime.dll&gt;" SelfReg="false"/>
+    <ROW File="System.Runtime.WindowsRuntime.UI.Xaml.dll" Component_="HtmlScraper_References" FileName="SYSTEM~9.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.WindowsRuntime.UI.Xaml.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_System.Runtime.WindowsRuntime.UI.Xaml.dll&gt;" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
+    <ROW Name="AI_APPPATH_PERBUILD_BouncyCastle.Crypto.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_BouncyCastle.Crypto.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_BouncyCastle.Crypto.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_ClosedXML.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_ClosedXML.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_ClosedXML.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_DocumentFormat.OpenXml.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_DocumentFormat.OpenXml.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_DocumentFormat.OpenXml.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_ExcelNumberFormat.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_ExcelNumberFormat.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_ExcelNumberFormat.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Google.Protobuf.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Google.Protobuf.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Google.Protobuf.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_HtmlAgilityPack.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_HtmlAgilityPack.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_HtmlAgilityPack.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_HtmlScraper.exe" Path="[|AI_PROPPATH_DIR_PERBUILD_HtmlScraper.exe]\[|AI_PROPPATH_FILENAME_PERBUILD_HtmlScraper.exe]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_HtmlScraper.exe.config" Path="[|AI_PROPPATH_DIR_PERBUILD_HtmlScraper.exe.config]\[|AI_PROPPATH_FILENAME_PERBUILD_HtmlScraper.exe.config]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_K4os.Compression.LZ4.Streams.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_K4os.Compression.LZ4.Streams.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_K4os.Compression.LZ4.Streams.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_K4os.Compression.LZ4.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_K4os.Compression.LZ4.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_K4os.Compression.LZ4.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_K4os.Hash.xxHash.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_K4os.Hash.xxHash.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_K4os.Hash.xxHash.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_MaterialDesignColors.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_MaterialDesignColors.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_MaterialDesignColors.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_MaterialDesignThemes.Wpf.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_MaterialDesignThemes.Wpf.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_MaterialDesignThemes.Wpf.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_MaterialSkin.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_MaterialSkin.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_MaterialSkin.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Microsoft.Toolkit.Uwp.Notifications.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Microsoft.Toolkit.Uwp.Notifications.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Microsoft.Toolkit.Uwp.Notifications.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_MySql.Data.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_MySql.Data.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_MySql.Data.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Newtonsoft.Json.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Newtonsoft.Json.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Newtonsoft.Json.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Renci.SshNet.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Renci.SshNet.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Renci.SshNet.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Buffers.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Buffers.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Buffers.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.IO.Packaging.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.IO.Packaging.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.IO.Packaging.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Memory.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Memory.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Memory.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Numerics.Vectors.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Numerics.Vectors.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Numerics.Vectors.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.CompilerServices.Unsafe.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Runtime.WindowsRuntime.UI.Xaml.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Runtime.WindowsRuntime.UI.Xaml.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.WindowsRuntime.UI.Xaml.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.Runtime.WindowsRuntime.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.Runtime.WindowsRuntime.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.Runtime.WindowsRuntime.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_System.ValueTuple.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_System.ValueTuple.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_System.ValueTuple.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Ubiety.Dns.Core.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Ubiety.Dns.Core.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Ubiety.Dns.Core.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_WebDriver.Support.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_WebDriver.Support.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_WebDriver.Support.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_WebDriver.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_WebDriver.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_WebDriver.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.AI.MachineLearning.MachineLearningContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.AI.MachineLearning.MachineLearningContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.AI.MachineLearning.MachineLearningContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.AI.MachineLearning.Preview.MachineLearningPreviewContract.win" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.AI.MachineLearning.Preview.MachineLearningPreviewContract.win]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.AI.MachineLearning.Preview.MachineLearningPreviewContract.win]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.Activation.ActivatedEventsContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Activation.ActivatedEventsContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Activation.ActivatedEventsContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.Activation.ActivationCameraSettingsContract." Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Activation.ActivationCameraSettingsContract.]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Activation.ActivationCameraSettingsContract.]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.Activation.ContactActivatedEventsContract.wi" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Activation.ContactActivatedEventsContract.wi]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Activation.ContactActivatedEventsContract.wi]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.Activation.WebUISearchActivatedEventsContrac" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Activation.WebUISearchActivatedEventsContrac]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Activation.WebUISearchActivatedEventsContrac]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.Background.BackgroundAlarmApplicationContrac" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Background.BackgroundAlarmApplicationContrac]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Background.BackgroundAlarmApplicationContrac]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.Calls.Background.CallsBackgroundContract.win" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Calls.Background.CallsBackgroundContract.win]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Calls.Background.CallsBackgroundContract.win]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.Calls.CallsPhoneContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Calls.CallsPhoneContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Calls.CallsPhoneContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.Calls.CallsVoipContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Calls.CallsVoipContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Calls.CallsVoipContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.Calls.LockScreenCallContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Calls.LockScreenCallContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Calls.LockScreenCallContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingC" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingC]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingC]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.FullTrustAppContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.FullTrustAppContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.FullTrustAppContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.Preview.InkWorkspace.PreviewInkWorkspaceCont" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Preview.InkWorkspace.PreviewInkWorkspaceCont]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Preview.InkWorkspace.PreviewInkWorkspaceCont]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.Preview.Notes.PreviewNotesContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Preview.Notes.PreviewNotesContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Preview.Notes.PreviewNotesContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.Resources.Management.ResourceIndexerContract" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Resources.Management.ResourceIndexerContract]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Resources.Management.ResourceIndexerContract]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.Search.Core.SearchCoreContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Search.Core.SearchCoreContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Search.Core.SearchCoreContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.Search.SearchContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Search.SearchContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Search.SearchContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.SocialInfo.SocialInfoContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.SocialInfo.SocialInfoContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.SocialInfo.SocialInfoContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.StartupTaskContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.StartupTaskContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.StartupTaskContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.ApplicationModel.Wallet.WalletContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.ApplicationModel.Wallet.WalletContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.ApplicationModel.Wallet.WalletContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Devices.Custom.CustomDeviceContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Devices.Custom.CustomDeviceContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Custom.CustomDeviceContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Devices.DevicesLowLevelContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Devices.DevicesLowLevelContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.DevicesLowLevelContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Devices.Portable.PortableDeviceContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Devices.Portable.PortableDeviceContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Portable.PortableDeviceContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Devices.Printers.Extensions.ExtensionsContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Devices.Printers.Extensions.ExtensionsContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Printers.Extensions.ExtensionsContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Devices.Printers.PrintersContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Devices.Printers.PrintersContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Printers.PrintersContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Devices.Scanners.ScannerDeviceContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Devices.Scanners.ScannerDeviceContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Scanners.ScannerDeviceContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Devices.SmartCards.SmartCardBackgroundTriggerContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Devices.SmartCards.SmartCardBackgroundTriggerContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.SmartCards.SmartCardBackgroundTriggerContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Devices.SmartCards.SmartCardEmulatorContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Devices.SmartCards.SmartCardEmulatorContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.SmartCards.SmartCardEmulatorContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Devices.Sms.LegacySmsApiContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Devices.Sms.LegacySmsApiContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Devices.Sms.LegacySmsApiContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Embedded.DeviceLockdown.DeviceLockdownContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Embedded.DeviceLockdown.DeviceLockdownContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Embedded.DeviceLockdown.DeviceLockdownContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Foundation.FoundationContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Foundation.FoundationContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Foundation.FoundationContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Foundation.UniversalApiContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Foundation.UniversalApiContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Foundation.UniversalApiContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Gaming.Input.GamingInputPreviewContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Gaming.Input.GamingInputPreviewContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Gaming.Input.GamingInputPreviewContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Gaming.Preview.GamesEnumerationContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Gaming.Preview.GamesEnumerationContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Gaming.Preview.GamesEnumerationContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Gaming.UI.GameChatOverlayContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Gaming.UI.GameChatOverlayContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Gaming.UI.GameChatOverlayContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Gaming.UI.GamingUIProviderContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Gaming.UI.GamingUIProviderContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Gaming.UI.GamingUIProviderContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Gaming.XboxLive.StorageApiContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Gaming.XboxLive.StorageApiContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Gaming.XboxLive.StorageApiContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Globalization.GlobalizationJapanesePhoneticAnalyzerContract.w" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Globalization.GlobalizationJapanesePhoneticAnalyzerContract.w]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Globalization.GlobalizationJapanesePhoneticAnalyzerContract.w]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Graphics.Printing3D.Printing3DContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Graphics.Printing3D.Printing3DContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Graphics.Printing3D.Printing3DContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Management.Deployment.Preview.DeploymentPreviewContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Management.Deployment.Preview.DeploymentPreviewContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Management.Deployment.Preview.DeploymentPreviewContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Management.Workplace.WorkplaceSettingsContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Management.Workplace.WorkplaceSettingsContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Management.Workplace.WorkplaceSettingsContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Media.AppBroadcasting.AppBroadcastingContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Media.AppBroadcasting.AppBroadcastingContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.AppBroadcasting.AppBroadcastingContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Media.AppRecording.AppRecordingContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Media.AppRecording.AppRecordingContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.AppRecording.AppRecordingContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Media.Capture.AppBroadcastContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Media.Capture.AppBroadcastContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Capture.AppBroadcastContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Media.Capture.AppCaptureContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Media.Capture.AppCaptureContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Capture.AppCaptureContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Media.Capture.AppCaptureMetadataContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Media.Capture.AppCaptureMetadataContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Capture.AppCaptureMetadataContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Media.Capture.CameraCaptureUIContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Media.Capture.CameraCaptureUIContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Capture.CameraCaptureUIContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Media.Capture.GameBarContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Media.Capture.GameBarContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Capture.GameBarContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Media.Devices.CallControlContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Media.Devices.CallControlContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Devices.CallControlContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Media.MediaControlContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Media.MediaControlContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.MediaControlContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Media.Playlists.PlaylistsContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Media.Playlists.PlaylistsContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Playlists.PlaylistsContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Media.Protection.ProtectionRenewalContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Media.Protection.ProtectionRenewalContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Media.Protection.ProtectionRenewalContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Networking.Connectivity.WwanContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Networking.Connectivity.WwanContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Networking.Connectivity.WwanContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Networking.NetworkOperators.LegacyNetworkOperatorsContract.wi" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Networking.NetworkOperators.LegacyNetworkOperatorsContract.wi]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Networking.NetworkOperators.LegacyNetworkOperatorsContract.wi]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract.WinMD" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract.WinMD]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract.WinMD]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Networking.Sockets.ControlChannelTriggerContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Networking.Sockets.ControlChannelTriggerContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Networking.Sockets.ControlChannelTriggerContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Networking.XboxLive.XboxLiveSecureSocketsContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Networking.XboxLive.XboxLiveSecureSocketsContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Networking.XboxLive.XboxLiveSecureSocketsContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Perception.Automation.Core.PerceptionAutomationCoreContract.w" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Perception.Automation.Core.PerceptionAutomationCoreContract.w]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Perception.Automation.Core.PerceptionAutomationCoreContract.w]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Phone.PhoneContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Phone.PhoneContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Phone.PhoneContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Phone.StartScreen.DualSimTileContract.WinMD" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Phone.StartScreen.DualSimTileContract.WinMD]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Phone.StartScreen.DualSimTileContract.WinMD]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Security.EnterpriseData.EnterpriseDataContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Security.EnterpriseData.EnterpriseDataContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Security.EnterpriseData.EnterpriseDataContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Security.ExchangeActiveSyncProvisioning.EasContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Security.ExchangeActiveSyncProvisioning.EasContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Security.ExchangeActiveSyncProvisioning.EasContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Services.Maps.GuidanceContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Services.Maps.GuidanceContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Services.Maps.GuidanceContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Services.Maps.LocalSearchContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Services.Maps.LocalSearchContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Services.Maps.LocalSearchContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Services.Store.StoreContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Services.Store.StoreContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Services.Store.StoreContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Services.TargetedContent.TargetedContentContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Services.TargetedContent.TargetedContentContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Services.TargetedContent.TargetedContentContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Storage.Provider.CloudFilesContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Storage.Provider.CloudFilesContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Storage.Provider.CloudFilesContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.System.Profile.ProfileHardwareTokenContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.System.Profile.ProfileHardwareTokenContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.System.Profile.ProfileHardwareTokenContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.System.Profile.ProfileRetailInfoContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.System.Profile.ProfileRetailInfoContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.System.Profile.ProfileRetailInfoContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.System.Profile.ProfileSharedModeContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.System.Profile.ProfileSharedModeContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.System.Profile.ProfileSharedModeContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.System.Profile.SystemManufacturers.SystemManufacturersContrac" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.System.Profile.SystemManufacturers.SystemManufacturersContrac]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.System.Profile.SystemManufacturers.SystemManufacturersContrac]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.System.SystemManagementContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.System.SystemManagementContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.System.SystemManagementContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.System.UserProfile.UserProfileContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.System.UserProfile.UserProfileContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.System.UserProfile.UserProfileContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.System.UserProfile.UserProfileLockScreenContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.System.UserProfile.UserProfileLockScreenContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.System.UserProfile.UserProfileLockScreenContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.UI.ApplicationSettings.ApplicationsSettingsContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.UI.ApplicationSettings.ApplicationsSettingsContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.ApplicationSettings.ApplicationsSettingsContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.UI.Core.AnimationMetrics.AnimationMetricsContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.UI.Core.AnimationMetrics.AnimationMetricsContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.Core.AnimationMetrics.AnimationMetricsContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.UI.Core.CoreWindowDialogsContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.UI.Core.CoreWindowDialogsContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.Core.CoreWindowDialogsContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.UI.Shell.SecurityAppManagerContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.UI.Shell.SecurityAppManagerContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.Shell.SecurityAppManagerContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.UI.ViewManagement.ViewManagementViewScalingContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.UI.ViewManagement.ViewManagementViewScalingContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.ViewManagement.ViewManagementViewScalingContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.UI.WebUI.Core.WebUICommandBarContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.UI.WebUI.Core.WebUICommandBarContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.WebUI.Core.WebUICommandBarContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.UI.Xaml.Core.Direct.XamlDirectContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.UI.Xaml.Core.Direct.XamlDirectContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.Xaml.Core.Direct.XamlDirectContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.UI.Xaml.Hosting.HostingContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.UI.Xaml.Hosting.HostingContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.UI.Xaml.Hosting.HostingContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Zstandard.Net.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Zstandard.Net.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Zstandard.Net.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_windows.winmd" Path="[|AI_PROPPATH_DIR_PERBUILD_windows.winmd]\[|AI_PROPPATH_FILENAME_PERBUILD_windows.winmd]" Type="2" Content="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="HtmlScraper_PrimaryOutput"/>
+    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+    <ROW Feature_="MainFeature" Component_="HtmlScraper_References"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="AI_PROPPATH_FILENAME_PERBUILD_HtmlS" Directory_="DesktopFolder" Name="SCRAPM~1|ScrapMeNow" Component_="HtmlScraper_PrimaryOutput" Target="[#HtmlScraper.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="HtmlScraper_Dir"/>
+    <ROW Shortcut="HtmlScraper" Directory_="SHORTCUTDIR" Name="HTMLSC~1|HtmlScraper" Component_="HtmlScraper_PrimaryOutput" Target="[#HtmlScraper.exe]" Hotkey="0" IconIndex="0" ShowCmd="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.VsProjectComponent">
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="PrimaryOutput" OutputFile="HtmlScraper.exe" OutputFileShortcut="AI_PROPPATH_FILENAME_PERBUILD_HtmlS"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="PrimaryOutput" OutputFile="HtmlScraper.exe.config"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="BouncyCastle.Crypto.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="ClosedXML.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="DocumentFormat.OpenXml.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="ExcelNumberFormat.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Google.Protobuf.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="HtmlAgilityPack.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="K4os.Compression.LZ4.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="K4os.Compression.LZ4.Streams.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="K4os.Hash.xxHash.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="MaterialDesignColors.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="MaterialDesignThemes.Wpf.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="MaterialSkin.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Microsoft.Toolkit.Uwp.Notifications.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="MySql.Data.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Newtonsoft.Json.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Renci.SshNet.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="System.Buffers.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="System.IO.Packaging.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="System.Memory.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="System.Numerics.Vectors.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="System.ValueTuple.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Ubiety.Dns.Core.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="WebDriver.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="WebDriver.Support.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.AI.MachineLearning.MachineLearningContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.AI.MachineLearning.Preview.MachineLearningPreviewContract.win"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.Activation.ActivatedEventsContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.Activation.ActivationCameraSettingsContract."/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.Activation.ContactActivatedEventsContract.wi"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.Activation.WebUISearchActivatedEventsContrac"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.Background.BackgroundAlarmApplicationContrac"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.Calls.Background.CallsBackgroundContract.win"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.Calls.CallsPhoneContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.Calls.CallsVoipContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.Calls.LockScreenCallContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.CommunicationBlocking.CommunicationBlockingC"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.FullTrustAppContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.Preview.InkWorkspace.PreviewInkWorkspaceCont"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.Preview.Notes.PreviewNotesContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.Resources.Management.ResourceIndexerContract"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.Search.Core.SearchCoreContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.Search.SearchContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.SocialInfo.SocialInfoContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.StartupTaskContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.ApplicationModel.Wallet.WalletContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Devices.Custom.CustomDeviceContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Devices.DevicesLowLevelContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Devices.Portable.PortableDeviceContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Devices.Printers.Extensions.ExtensionsContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Devices.Printers.PrintersContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Devices.Scanners.ScannerDeviceContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Devices.SmartCards.SmartCardBackgroundTriggerContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Devices.SmartCards.SmartCardEmulatorContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Devices.Sms.LegacySmsApiContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Embedded.DeviceLockdown.DeviceLockdownContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Foundation.FoundationContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Foundation.UniversalApiContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Gaming.Input.GamingInputPreviewContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Gaming.Preview.GamesEnumerationContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Gaming.UI.GameChatOverlayContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Gaming.UI.GamingUIProviderContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Gaming.XboxLive.StorageApiContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Globalization.GlobalizationJapanesePhoneticAnalyzerContract.w"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Graphics.Printing3D.Printing3DContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Management.Deployment.Preview.DeploymentPreviewContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Management.Workplace.WorkplaceSettingsContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Media.AppBroadcasting.AppBroadcastingContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Media.AppRecording.AppRecordingContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Media.Capture.AppBroadcastContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Media.Capture.AppCaptureContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Media.Capture.AppCaptureMetadataContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Media.Capture.CameraCaptureUIContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Media.Capture.GameBarContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Media.Devices.CallControlContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Media.MediaControlContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Media.Playlists.PlaylistsContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Media.Protection.ProtectionRenewalContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Networking.Connectivity.WwanContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Networking.NetworkOperators.LegacyNetworkOperatorsContract.wi"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Networking.NetworkOperators.NetworkOperatorsFdnContract.WinMD"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Networking.Sockets.ControlChannelTriggerContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Networking.XboxLive.XboxLiveSecureSocketsContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Perception.Automation.Core.PerceptionAutomationCoreContract.w"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Phone.PhoneContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Phone.StartScreen.DualSimTileContract.WinMD"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Security.EnterpriseData.EnterpriseDataContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Security.ExchangeActiveSyncProvisioning.EasContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Services.Maps.GuidanceContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Services.Maps.LocalSearchContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Services.Store.StoreContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Services.TargetedContent.TargetedContentContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Storage.Provider.CloudFilesContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.System.Profile.ProfileHardwareTokenContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.System.Profile.ProfileRetailInfoContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.System.Profile.ProfileSharedModeContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.System.Profile.SystemManufacturers.SystemManufacturersContrac"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.System.SystemManagementContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.System.UserProfile.UserProfileContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.System.UserProfile.UserProfileLockScreenContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.UI.ApplicationSettings.ApplicationsSettingsContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.UI.Core.AnimationMetrics.AnimationMetricsContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.UI.Core.CoreWindowDialogsContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.UI.Shell.SecurityAppManagerContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.UI.ViewManagement.ViewManagementViewScalingContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.UI.WebUI.Core.WebUICommandBarContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.UI.Xaml.Core.Direct.XamlDirectContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.UI.Xaml.Hosting.HostingContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="windows.winmd"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="Zstandard.Net.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="System.Runtime.WindowsRuntime.dll"/>
+    <ROW ProjectId="{29a4bc43-130a-49de-b6ec-8a0dcd71b144}" ProjectName="HtmlScraper" OutputGroup="References" OutputFile="System.Runtime.WindowsRuntime.UI.Xaml.dll"/>
+  </COMPONENT>
+</DOCUMENT>

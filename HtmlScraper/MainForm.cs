@@ -17,9 +17,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Notification.Wpf;
-using Tulpep.NotificationWindow;
-using Tulpep;
+
 namespace HtmlScraper
 {
     public partial class MainForm : MaterialSkin.Controls.MaterialForm
@@ -44,7 +42,7 @@ namespace HtmlScraper
             {
                 MySqlConnection conn = new MySqlConnection("SERVER =88.99.136.47;PORT=3306;DATABASE=xuxlffke_scrapingdb;USER=xuxlffke_scraperuser;PASSWORD='lA,wA&5$w]}=';");
                 conn.Open();
-                MySQL_LoadDatagridviewData();
+                MySQL_LoadListviewData();
                 MySqlCommand com = conn.CreateCommand();
                 com.CommandText = "SELECT MAX(ID) FROM production";
                 com.ExecuteNonQuery();
@@ -98,7 +96,7 @@ namespace HtmlScraper
         {
             Application.Exit();
         }
-        private void MySQL_LoadDatagridviewData()
+        private void MySQL_LoadListviewData()
         {
             try
             {
@@ -318,7 +316,7 @@ namespace HtmlScraper
 
         private void btnRefreshLoad_Click(object sender, EventArgs e)
         {
-            MySQL_LoadDatagridviewData();
+            MySQL_LoadListviewData();
         }
 
         private void btnExport_Click(object sender, EventArgs e)
@@ -333,6 +331,7 @@ namespace HtmlScraper
             MySqlConnection mysqlCon = new MySqlConnection("SERVER= 88.99.136.47;PORT=3306;DATABASE=xuxlffke_scrapingdb;USER=xuxlffke_scraperuser;PASSWORD='lA,wA&5$w]}=';");
             HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
             mysqlCon.Open();
+            Console.WriteLine("ins production");
             foreach (var line in l)
             {
                 Console.WriteLine("line " + line.ToString());
@@ -417,12 +416,11 @@ namespace HtmlScraper
                     mycmd.Parameters.AddWithValue("@Description", ss);
                     mycmd.Parameters.AddWithValue("@URL", url.TrimStart().TrimEnd());
                     mycmd.Parameters.AddWithValue("@Producer", RemoveEmptyLines(production.InnerText));
-                    mycmd.Parameters.AddWithValue("@MediaURL", getMedia(url));
+                    mycmd.Parameters.AddWithValue("@MediaURL",getMedia(url));
                     mycmd.Parameters.AddWithValue("@Duration", getDuration(line.ToString()));
                     mycmd.Parameters.AddWithValue("@SystemID", 3);
                     mycmd.ExecuteNonQuery();
                 }
-                
                 safety = "";
                 MySqlCommand lk = mysqlCon.CreateCommand();
                 lk.CommandText = "SELECT ID FROM production where URL='" + url.TrimStart().TrimEnd() + "'";
@@ -438,8 +436,8 @@ namespace HtmlScraper
                 }
                 else
                 {
-                    insertEvent(prodid, url);
-                    insertPersons(url, prodid);
+                     insertEvent(prodid, url);
+                     insertPersons(url, prodid);
                 }
             }
             MySqlCommand maxprodId = mysqlCon.CreateCommand();
@@ -456,8 +454,6 @@ namespace HtmlScraper
             string mediasrc = "";
             ChromeDriver driver = new ChromeDriver(chromeOptions);
             driver.Navigate().GoToUrl(link);
-            experimentalFlags.Add("same-site-by-default-cookies@2");
-            experimentalFlags.Add("cookies-without-same-site-must-be-secure@2");
             chromeOptions.AddLocalStatePreference("browser.enabled_labs_experiments",
                 experimentalFlags);
             var cookies = driver.Manage().Cookies.AllCookies;
