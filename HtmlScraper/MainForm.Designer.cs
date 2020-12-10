@@ -101,6 +101,7 @@ namespace HtmlScraper
             this.columnHeaderorgtime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -263,7 +264,7 @@ namespace HtmlScraper
             // columnHeaderDescription
             // 
             this.columnHeaderDescription.Text = "Description";
-            this.columnHeaderDescription.Width = 115;
+            this.columnHeaderDescription.Width = 350;
             // 
             // columnHeaderURL
             // 
@@ -682,6 +683,13 @@ namespace HtmlScraper
             this.imageList1.Images.SetKeyName(0, "icons8-refresh-40.png");
             this.imageList1.Images.SetKeyName(1, "reload (1).png");
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "ScrapMeNow";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -694,6 +702,7 @@ namespace HtmlScraper
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ScrapMeNow";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -785,5 +794,6 @@ namespace HtmlScraper
         private System.Windows.Forms.ColumnHeader columnHeaderorgtime;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

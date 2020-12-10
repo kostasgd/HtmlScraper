@@ -52,7 +52,9 @@ namespace HtmlScraper
                     checknewlinks();
                     if (checknewlinks().Count > 0)
                     {
-                        insertProduction();   
+                        insertProduction();
+                        Notification not = new Notification("Επιτυχης εισαγωγη νεας εγγραφής",Color.Green);
+                        not.ShowDialog();
                     }
                 }, null, startTimeSpan, periodTimeSpan);
             }
@@ -436,7 +438,7 @@ namespace HtmlScraper
                 }
                 else
                 {
-                     insertEvent(prodid, url);
+                     //insertEvent(prodid, url);
                      insertPersons(url, prodid);
                 }
             }
@@ -520,6 +522,7 @@ namespace HtmlScraper
             {
                 dur = "Not found";
             }
+
             return dur;
         }
         private static string RemoveEmptyLines(string lines)
@@ -581,38 +584,53 @@ namespace HtmlScraper
                     month = s.Split('/')[1];
                     year = "2020";
                 }
-                string hour = hours[p].Text.Split(':')[0];
-                string minutes = hours[p].Text.Split(':')[1];
-                string eventvenue = place[p].Text.Split('-')[0].TrimStart().TrimEnd();
-                string eventaddress = place[p].Text.Split('-')[1].TrimStart().TrimEnd();
-                MySqlCommand findcom = new MySqlCommand("SELECT COUNT(*) FROM venue WHERE Title = '" + eventvenue + "'", mysqlCon);
-                findcom.ExecuteNonQuery();
-                long venueexist = (long)findcom.ExecuteScalar();
                 string date_from = "";
-                MySqlCommand insvencomm = mysqlCon.CreateCommand();
-                if (venueexist < 1)
+                if (hours[p].Text.Contains(":"))
                 {
-                    insvencomm.CommandText = "INSERT INTO `venue`(`Title`, `Address`, `SystemID`) VALUES ('" + eventvenue + "','" + eventaddress + "','" + 3 + "')";
+                    string hour = hours[p].Text.Split(':')[0];
+                    string minutes = hours[p].Text.Split(':')[1];
+                    string eventvenue = place[p].Text.Split('-')[0].TrimStart().TrimEnd();
+                    string eventaddress = place[p].Text.Split('-')[1].TrimStart().TrimEnd();
+                    MySqlCommand findcom = new MySqlCommand("SELECT COUNT(*) FROM venue WHERE Title = '" + eventvenue + "'", mysqlCon);
+                    findcom.ExecuteNonQuery();
+                    long venueexist = (long)findcom.ExecuteScalar();
+                    MySqlCommand insvencomm = mysqlCon.CreateCommand();
+                    if (venueexist < 1)
+                    {
+                        insvencomm.CommandText = "INSERT INTO `venue`(`Title`, `Address`, `SystemID`) VALUES ('" + eventvenue + "','" + eventaddress + "','" + 3 + "')";
+                        insvencomm.ExecuteNonQuery();
+                        MySqlCommand insEvCom = mysqlCon.CreateCommand();
+                        long newid = (long)insvencomm.LastInsertedId;
+                        DateTime temp = new DateTime(int.Parse(year), Int32.Parse(month), Int32.Parse(days), Int32.Parse(hour), Int32.Parse(minutes), 0);
+                        date_from = temp.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+                        insEvCom.CommandText = "INSERT INTO events(ProductionID,VenueID,DateEvent,PriceRange,SystemID) VALUES ('" + prodid + "','" + newid + "','" + date_from + "','" + prices[p] + "','" + 3 + "')";
+                        insEvCom.ExecuteNonQuery();
+                    }
+                    else if (venueexist == 1)
+                    {
+                        MySqlCommand gmtxm = mysqlCon.CreateCommand();
+                        gmtxm.CommandText = "SELECT ID FROM venue WHERE Title = @evven";
+                        gmtxm.Parameters.AddWithValue("@evven", eventvenue);
+                        var evven = gmtxm.ExecuteScalar();
+                        DateTime temp = new DateTime(int.Parse(year), Int32.Parse(month), Int32.Parse(days), Int32.Parse(hour), Int32.Parse(minutes), 0);
+                        MySqlCommand insEvent = new MySqlCommand();
+                        insEvent.Connection = mysqlCon;
+                        date_from = temp.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+                        insEvent.CommandText = "INSERT INTO events(ProductionID,VenueID,DateEvent,PriceRange,SystemID) VALUES ('" + prodid + "','" + evven.ToString() + "','" + date_from + "','" + prices[p] + "','" + 3 + "')";
+                        insEvent.ExecuteNonQuery();
+                    }
+                }
+                else
+                {
+                    MySqlCommand insvencomm = mysqlCon.CreateCommand();
+                    insvencomm.CommandText = "INSERT INTO `venue`(`Title`, `Address`, `SystemID`) VALUES ('" + "Online" + "','" + "" + "','" + 3 + "')";
                     insvencomm.ExecuteNonQuery();
                     MySqlCommand insEvCom = mysqlCon.CreateCommand();
                     long newid = (long)insvencomm.LastInsertedId;
-                    DateTime temp = new DateTime(int.Parse(year), Int32.Parse(month), Int32.Parse(days), Int32.Parse(hour), Int32.Parse(minutes), 0);
+                    DateTime temp = new DateTime();
                     date_from = temp.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
                     insEvCom.CommandText = "INSERT INTO events(ProductionID,VenueID,DateEvent,PriceRange,SystemID) VALUES ('" + prodid + "','" + newid + "','" + date_from + "','" + prices[p] + "','" + 3 + "')";
                     insEvCom.ExecuteNonQuery();
-                }
-                else if (venueexist == 1)
-                {
-                    MySqlCommand gmtxm = mysqlCon.CreateCommand();
-                    gmtxm.CommandText = "SELECT ID FROM venue WHERE Title = @evven";
-                    gmtxm.Parameters.AddWithValue("@evven", eventvenue);
-                    var evven = gmtxm.ExecuteScalar();
-                    DateTime temp = new DateTime(int.Parse(year), Int32.Parse(month), Int32.Parse(days), Int32.Parse(hour), Int32.Parse(minutes), 0);
-                    MySqlCommand insEvent = new MySqlCommand();
-                    insEvent.Connection = mysqlCon;
-                    date_from = temp.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
-                    insEvent.CommandText = "INSERT INTO events(ProductionID,VenueID,DateEvent,PriceRange,SystemID) VALUES ('" + prodid + "','" + evven.ToString() + "','" + date_from + "','" + prices[p] + "','" + 3 + "')";
-                    insEvent.ExecuteNonQuery();
                 }
             }
             driver.Quit();
@@ -1055,6 +1073,25 @@ namespace HtmlScraper
         private void btnNotification_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnSuccess_Click(object sender, EventArgs e){ }
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            if(FormWindowState.Minimized == WindowState)
+            {
+                Hide();
+            }
+            else
+            {
+                Show();
+            }
+        }
+
+        private void notifyIcon1_DoubleClick(object sender, EventArgs e)
+        {
+           Show();
         }
     }
 }
