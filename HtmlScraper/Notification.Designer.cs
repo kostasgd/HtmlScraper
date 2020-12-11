@@ -44,8 +44,9 @@ namespace HtmlScraper
             this.lbMessage.ForeColor = System.Drawing.SystemColors.Control;
             this.lbMessage.Location = new System.Drawing.Point(96, 29);
             this.lbMessage.Name = "lbMessage";
-            this.lbMessage.Size = new System.Drawing.Size(0, 21);
+            this.lbMessage.Size = new System.Drawing.Size(275, 21);
             this.lbMessage.TabIndex = 0;
+            this.lbMessage.Text = "Επιτυχής εισαγωγή νέας εγγραφής";
             this.lbMessage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // timerClose

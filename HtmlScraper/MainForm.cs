@@ -1092,6 +1092,9 @@ namespace HtmlScraper
         private void notifyIcon1_DoubleClick(object sender, EventArgs e)
         {
            Show();
+           this.BringToFront();
+           this.Activate();
+           this.WindowState = FormWindowState.Normal;
         }
     }
 }
