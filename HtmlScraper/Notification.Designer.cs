@@ -72,6 +72,7 @@ namespace HtmlScraper
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbMessage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Notification";
             this.Text = "Notification";
             this.Load += new System.EventHandler(this.Notification_Load);

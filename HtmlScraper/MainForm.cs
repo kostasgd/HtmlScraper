@@ -22,6 +22,7 @@ namespace HtmlScraper
 {
     public partial class MainForm : MaterialSkin.Controls.MaterialForm
     {
+        public string conString = "SERVER =88.99.136.47;PORT=3306;DATABASE=xuxlffke_scrapingdb;USER=xuxlffke_scraperuser;PASSWORD='lA,wA&5$w]}=';";
         public MainForm()
         {
             InitializeComponent();
@@ -38,15 +39,10 @@ namespace HtmlScraper
             var path = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
             RegistryKey key = Registry.CurrentUser.OpenSubKey(path, true);
             key.SetValue("ScrapMeNow", Application.ExecutablePath.ToString());
+
             if (Ping() & Sql())
             {
-                MySqlConnection conn = new MySqlConnection("SERVER =88.99.136.47;PORT=3306;DATABASE=xuxlffke_scrapingdb;USER=xuxlffke_scraperuser;PASSWORD='lA,wA&5$w]}=';");
-                conn.Open();
                 MySQL_LoadListviewData();
-                MySqlCommand com = conn.CreateCommand();
-                com.CommandText = "SELECT MAX(ID) FROM production";
-                com.ExecuteNonQuery();
-                int maxid = Int32.Parse(com.ExecuteScalar().ToString());
                 var timer = new System.Threading.Timer((e) =>
                 {
                     checknewlinks();
@@ -81,7 +77,7 @@ namespace HtmlScraper
         {
             try
             {
-                using (var connection = new MySqlConnection("SERVER =88.99.136.47;PORT=3306;DATABASE=xuxlffke_scrapingdb;USER=xuxlffke_scraperuser;PASSWORD='lA,wA&5$w]}=';"))
+                using (var connection = new MySqlConnection(conString))
                 {
                     connection.Open();
                     return true;
@@ -102,7 +98,7 @@ namespace HtmlScraper
         {
             try
             {
-                MySqlConnection mysqlCon = new MySqlConnection("SERVER= 88.99.136.47;PORT=3306;DATABASE=xuxlffke_scrapingdb;USER=xuxlffke_scraperuser;PASSWORD='lA,wA&5$w]}=';");
+                MySqlConnection mysqlCon = new MySqlConnection(conString);
                 mysqlCon.Open();
                 MySqlCommand cmd = new MySqlCommand(@"SELECT ID,OrganizerID,Title,Description,URL,Producer,MediaURL,Duration,SystemID,timestamp FROM production", mysqlCon);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -326,19 +322,17 @@ namespace HtmlScraper
             Export_Form ef = new Export_Form();
             ef.Show();
         }
-        private static void insertProduction()
+        private void insertProduction()
         {
             int prodid = 0;
             List<string> l = checknewlinks();
-            MySqlConnection mysqlCon = new MySqlConnection("SERVER= 88.99.136.47;PORT=3306;DATABASE=xuxlffke_scrapingdb;USER=xuxlffke_scraperuser;PASSWORD='lA,wA&5$w]}=';");
+            MySqlConnection mysqlCon = new MySqlConnection(conString);
             HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
             mysqlCon.Open();
             Console.WriteLine("ins production");
             foreach (var line in l)
             {
-                Console.WriteLine("line " + line.ToString());
                 HtmlAgilityPack.HtmlDocument doc = web.Load(line);
-                var container = doc.DocumentNode.SelectNodes("//div[@class='field-group']/span").ToList();
                 var orgtitle = doc?.DocumentNode?.SelectSingleNode("//div[@class='playDetailsContainer']/h4");
                 var fields = doc?.DocumentNode?.SelectNodes("//div[@class='field']").ToList();
                 int counter = 0;
@@ -438,14 +432,10 @@ namespace HtmlScraper
                 }
                 else
                 {
-                     //insertEvent(prodid, url);
+                     insertEvent(prodid, url);
                      insertPersons(url, prodid);
                 }
             }
-            MySqlCommand maxprodId = mysqlCon.CreateCommand();
-            maxprodId.CommandText = "SELECT MAX(ID) FROM production";
-            maxprodId.ExecuteNonQuery();
-            object maxprod = maxprodId.ExecuteScalar();
             mysqlCon.Close();
         }
         private static string getMedia(string link)
@@ -459,10 +449,19 @@ namespace HtmlScraper
             chromeOptions.AddLocalStatePreference("browser.enabled_labs_experiments",
                 experimentalFlags);
             var cookies = driver.Manage().Cookies.AllCookies;
-            driver.FindElement(By.XPath("//a[contains(@class,'cc-btn--accept')]")).Click();
+            Boolean cookieisenabled = driver.FindElement(By.XPath("//a[contains(@class,'cc-btn--accept')]")).Displayed;
+            if (cookieisenabled) {
+                driver.FindElement(By.XPath("//a[contains(@class,'cc-btn--accept')]")).Click();
+            }
+            
             Thread.Sleep(2000);
-            List<IWebElement> cheeses = driver.FindElements(By.Id("openMedia")).ToList();
-            if (cheeses.Count > 0)
+            Boolean mediaisenabled = false;
+            if (driver.FindElements(By.Id("openMedia")).Count != 0 && driver.FindElement(By.Id("openMedia")).Enabled)
+            {
+                 mediaisenabled = driver.FindElement(By.Id("openMedia")).Enabled;
+            }
+            //List<IWebElement> media = driver.FindElements(By.Id("openMedia")).ToList();
+            if (mediaisenabled)
             {
                 driver.FindElement(By.Id("openMedia")).Click();
                 Thread.Sleep(3000);
@@ -529,9 +528,9 @@ namespace HtmlScraper
         {
             return System.Text.RegularExpressions.Regex.Replace(lines, @"^\s*$\n|\r", string.Empty, RegexOptions.Multiline).TrimEnd();
         }
-        static void insertEvent(int prodid, string link)
+        void insertEvent(int prodid, string link)
         {
-            MySqlConnection mysqlCon = new MySqlConnection("SERVER= 88.99.136.47;PORT=3306;DATABASE=xuxlffke_scrapingdb;USER=xuxlffke_scraperuser;PASSWORD='lA,wA&5$w]}=';");
+            MySqlConnection mysqlCon = new MySqlConnection(conString);
             mysqlCon.Open();
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddArguments("headless");
@@ -539,7 +538,6 @@ namespace HtmlScraper
             string mediasrc = "";
             ChromeDriver driver = new ChromeDriver(chromeOptions);
             driver.Navigate().GoToUrl(link);
-            experimentalFlags.Add("same-site-by-default-cookies@2");
             experimentalFlags.Add("cookies-without-same-site-must-be-secure@2");
             chromeOptions.AddLocalStatePreference("browser.enabled_labs_experiments",
                 experimentalFlags);
@@ -553,6 +551,7 @@ namespace HtmlScraper
             List<double> numbers = new List<double>();
             List<string> prices = new List<string>();
             string price = "";
+
             foreach (var j in money)
             {
                 string[] sep = new string[] { "\r\n" };
@@ -561,7 +560,6 @@ namespace HtmlScraper
                 {
                     price += h;
                 }
-                Console.WriteLine(price);
                 prices.Add(price);
                 price = "";
             }
@@ -569,78 +567,70 @@ namespace HtmlScraper
             for (int p = 0; p < place.Count; p++)
             {
                 string s = date[p].Text.Split(' ').Last();
-                string days = "";
-                string month = "";
-                string year = "";
-                if (Regex.Match(s, @"[0-9]{1,}(\/)[0-9]{1,}(\/)[0-9]{1,}").Success)
+                string days = "", month = "", year = "", hour="", minutes="", eventvenue="", eventaddress="";
+
+                if (Regex.Match(s, @"[0-9]{1,}(\/)[0-9]{1,}").Success)
                 {
                     days = s.Split('/')[0];
                     month = s.Split('/')[1];
                     year = "2021";
                 }
-                else if (Regex.Match(s, @"[0-9]{1,}(\/)[0-9]{1,}").Success)
-                {
-                    days = s.Split('/')[0];
-                    month = s.Split('/')[1];
-                    year = "2020";
-                }
                 string date_from = "";
                 if (hours[p].Text.Contains(":"))
                 {
-                    string hour = hours[p].Text.Split(':')[0];
-                    string minutes = hours[p].Text.Split(':')[1];
-                    string eventvenue = place[p].Text.Split('-')[0].TrimStart().TrimEnd();
-                    string eventaddress = place[p].Text.Split('-')[1].TrimStart().TrimEnd();
+                    hour = hours[p].Text.Split(':')[0];
+                    minutes = hours[p].Text.Split(':')[1];
+                    eventvenue = place[p].Text.Split('-')[0].TrimStart().TrimEnd();
+                    eventaddress = place[p].Text.Split('-')[1].TrimStart().TrimEnd();
                     MySqlCommand findcom = new MySqlCommand("SELECT COUNT(*) FROM venue WHERE Title = '" + eventvenue + "'", mysqlCon);
                     findcom.ExecuteNonQuery();
                     long venueexist = (long)findcom.ExecuteScalar();
                     MySqlCommand insvencomm = mysqlCon.CreateCommand();
-                    if (venueexist < 1)
+                    if (Regex.Match(hours[p].Text, @"[0-9]{1,}[0-9]{1,}:[0-9]{1,}[0-9]{1,}").Success)
                     {
-                        insvencomm.CommandText = "INSERT INTO `venue`(`Title`, `Address`, `SystemID`) VALUES ('" + eventvenue + "','" + eventaddress + "','" + 3 + "')";
-                        insvencomm.ExecuteNonQuery();
-                        MySqlCommand insEvCom = mysqlCon.CreateCommand();
-                        long newid = (long)insvencomm.LastInsertedId;
-                        DateTime temp = new DateTime(int.Parse(year), Int32.Parse(month), Int32.Parse(days), Int32.Parse(hour), Int32.Parse(minutes), 0);
-                        date_from = temp.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
-                        insEvCom.CommandText = "INSERT INTO events(ProductionID,VenueID,DateEvent,PriceRange,SystemID) VALUES ('" + prodid + "','" + newid + "','" + date_from + "','" + prices[p] + "','" + 3 + "')";
-                        insEvCom.ExecuteNonQuery();
-                    }
-                    else if (venueexist == 1)
-                    {
-                        MySqlCommand gmtxm = mysqlCon.CreateCommand();
-                        gmtxm.CommandText = "SELECT ID FROM venue WHERE Title = @evven";
-                        gmtxm.Parameters.AddWithValue("@evven", eventvenue);
-                        var evven = gmtxm.ExecuteScalar();
-                        DateTime temp = new DateTime(int.Parse(year), Int32.Parse(month), Int32.Parse(days), Int32.Parse(hour), Int32.Parse(minutes), 0);
-                        MySqlCommand insEvent = new MySqlCommand();
-                        insEvent.Connection = mysqlCon;
-                        date_from = temp.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
-                        insEvent.CommandText = "INSERT INTO events(ProductionID,VenueID,DateEvent,PriceRange,SystemID) VALUES ('" + prodid + "','" + evven.ToString() + "','" + date_from + "','" + prices[p] + "','" + 3 + "')";
-                        insEvent.ExecuteNonQuery();
+                        if (venueexist < 1)
+                        {
+                            insvencomm.CommandText = "INSERT INTO `venue`(`Title`, `Address`, `SystemID`) VALUES ('" + eventvenue + "','" + eventaddress + "','" + 3 + "')";
+                            insvencomm.ExecuteNonQuery();
+                            MySqlCommand insEvCom = mysqlCon.CreateCommand();
+                            long newid = (long)insvencomm.LastInsertedId;
+                            DateTime temp = new DateTime(int.Parse(year), Int32.Parse(month), Int32.Parse(days), Int32.Parse(hour), Int32.Parse(minutes), 0);
+                            date_from = temp.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+                            insEvCom.CommandText = "INSERT INTO events(ProductionID,VenueID,DateEvent,PriceRange,SystemID) VALUES ('" + prodid + "','" + newid + "','" + date_from + "','" + prices[p] + "','" + 3 + "')";
+                            insEvCom.ExecuteNonQuery();
+                        }
+                        else if (venueexist == 1)
+                        {
+                            MySqlCommand gmtxm = mysqlCon.CreateCommand();
+                            gmtxm.CommandText = "SELECT ID FROM venue WHERE Title = @evven";
+                            gmtxm.Parameters.AddWithValue("@evven", eventvenue);
+                            var evven = gmtxm.ExecuteScalar();
+                            DateTime temp = new DateTime(int.Parse(year), Int32.Parse(month), Int32.Parse(days), Int32.Parse(hour), Int32.Parse(minutes), 0);
+                            MySqlCommand insEvent = new MySqlCommand();
+                            insEvent.Connection = mysqlCon;
+                            date_from = temp.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+                            insEvent.CommandText = "INSERT INTO events(ProductionID,VenueID,DateEvent,PriceRange,SystemID) VALUES ('" + prodid + "','" + evven.ToString() + "','" + date_from + "','" + prices[p] + "','" + 3 + "')";
+                            insEvent.ExecuteNonQuery();
+                        }
                     }
                 }
                 else
                 {
-                    MySqlCommand insvencomm = mysqlCon.CreateCommand();
-                    insvencomm.CommandText = "INSERT INTO `venue`(`Title`, `Address`, `SystemID`) VALUES ('" + "Online" + "','" + "" + "','" + 3 + "')";
-                    insvencomm.ExecuteNonQuery();
                     MySqlCommand insEvCom = mysqlCon.CreateCommand();
-                    long newid = (long)insvencomm.LastInsertedId;
-                    DateTime temp = new DateTime();
+                    DateTime temp = new DateTime(int.Parse(year), Int32.Parse(month), Int32.Parse(days),0, 0, 0);
                     date_from = temp.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
-                    insEvCom.CommandText = "INSERT INTO events(ProductionID,VenueID,DateEvent,PriceRange,SystemID) VALUES ('" + prodid + "','" + newid + "','" + date_from + "','" + prices[p] + "','" + 3 + "')";
+                    insEvCom.CommandText = "INSERT INTO events(ProductionID,VenueID,DateEvent,PriceRange,SystemID) VALUES ('" + prodid + "','" + 81 + "','" + date_from + "','" + prices[p] + "','" + 3 + "')";
                     insEvCom.ExecuteNonQuery();
                 }
             }
             driver.Quit();
             mysqlCon.Close();
         }
-        private static void insertContribution(List<string> people, List<string> roles, List<string> subroles, int prodid)
+        private void insertContribution(List<string> people, List<string> roles, List<string> subroles, int prodid)
         {
             long roleid = 0;
             int counter = 0, i = 0;
-            MySqlConnection mysqlCon = new MySqlConnection("SERVER= 88.99.136.47;PORT=3306;DATABASE=xuxlffke_scrapingdb;USER=xuxlffke_scraperuser;PASSWORD='lA,wA&5$w]}=';");
+            MySqlConnection mysqlCon = new MySqlConnection(conString);
             mysqlCon.Open();
             object peopleid = new object();
             try
@@ -705,45 +695,12 @@ namespace HtmlScraper
         }
         public static string[] unwanted = { "ΠΡΩΤΑΓΩΝΙΣΤΟΥΝ", "ΠΑΙΖΟΥΝ", "ΑΛΦΑΒΗΤΙΚΑ", "ΔΙΑΝΟΜΗ" , "Παίζουν" , "Θεάτρου", "Θεάτρο","Πρωταγωνιστούν","Συντελεστές:","Συντελεστές",
                     "από", "ΣΥΝΤΕΛΕΣΤΕΣ", "Συμπαραγωγή", "Διανομή", "Ταυτότητα" , "ΑΛΦΑΒΗΤΙΚΑ","Θεάτρου" ,"Προπώληση","Εισιτήρια","Συμπαραγωγή","Πότε","Διάρκεια","ΤΟΥ ΔΗΜΗΤΡΙΟΥ ΒΥΖΑΝΤΙΟΥ","Ευχαριστούμε","*","Διατίθενται"};
-        static List<string> checknewlinks()
-        {
-            HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
-            HtmlAgilityPack.HtmlDocument doc = web.Load("https://www.viva.gr/tickets/theatre/");
-            List<string> theatrelinks = getallproductionlinks();
-            List<string> links = new List<string>();
-            MySqlConnection mysqlCon = new MySqlConnection("SERVER= 88.99.136.47;PORT=3306;DATABASE=xuxlffke_scrapingdb;USER=xuxlffke_scraperuser;PASSWORD='lA,wA&5$w]}=';");
-            mysqlCon.Open();
-            try
-            {
-                MySqlCommand checknew = mysqlCon.CreateCommand();
-                foreach (var j in theatrelinks)
-                {
-                    checknew.CommandText = "SELECT ID FROM `production` WHERE `URL` LIKE'%" + j.ToString().TrimStart().TrimEnd() + "%'";
-                    checknew.ExecuteNonQuery();
-                    object venueexist = (object)checknew.ExecuteScalar();
-                    if (venueexist != null)
-                    {
-                        //Console.WriteLine(venueexist.ToString());
-                    }
-                    else
-                    {
-                        links.Add(j.ToString());
-                    }
-                }
-            }
-            catch (System.InvalidCastException) { }
-            foreach (var r in links)
-            {
-                Console.WriteLine("Βρεθηκε καινουργια παρασταση " + r.ToString());
-            }
-            mysqlCon.Close();
-            return links;
-        }
-        public static void insertPersons(string link, int prodid)
+        
+        public  void insertPersons(string link, int prodid)
         {
             HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
             HtmlAgilityPack.HtmlDocument doc = web.Load(link);
-            MySqlConnection mysqlCon = new MySqlConnection("SERVER= 88.99.136.47;PORT=3306;DATABASE=xuxlffke_scrapingdb;USER=xuxlffke_scraperuser;PASSWORD='lA,wA&5$w]}=';");
+            MySqlConnection mysqlCon = new MySqlConnection(conString);
             mysqlCon.Open();
             List<string> peoples = new List<string>();
             List<string> proles = new List<string>();
@@ -1052,8 +1009,41 @@ namespace HtmlScraper
             insertContribution(peoplesafter, proles, subroles, prodid);
             mysqlCon.Close();
         }
-
-        static List<string> getallproductionlinks()
+        List<string> checknewlinks()
+        {
+            HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
+            HtmlAgilityPack.HtmlDocument doc = web.Load("https://www.viva.gr/tickets/theatre/");
+            List<string> theatrelinks = getallproductionlinks();
+            List<string> links = new List<string>();
+            MySqlConnection mysqlCon = new MySqlConnection(conString);
+            mysqlCon.Open();
+            try
+            {
+                MySqlCommand checknew = mysqlCon.CreateCommand();
+                foreach (var j in theatrelinks)
+                {
+                    checknew.CommandText = "SELECT ID FROM `production` WHERE `URL` LIKE'%" + j.ToString().TrimStart().TrimEnd() + "%'";
+                    checknew.ExecuteNonQuery();
+                    object venueexist = (object)checknew.ExecuteScalar();
+                    if (venueexist != null)
+                    {
+                        //Console.WriteLine(venueexist.ToString());
+                    }
+                    else
+                    {
+                        links.Add(j.ToString());
+                    }
+                }
+            }
+            catch (System.InvalidCastException) { }
+            foreach (var r in links)
+            {
+                Console.WriteLine("Βρεθηκε καινουργια παρασταση " + r.ToString());
+            }
+            mysqlCon.Close();
+            return links;
+        }
+        List<string> getallproductionlinks()
         {
             HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
             HtmlAgilityPack.HtmlDocument doc = web.Load("https://www.viva.gr/tickets/theatre/");
@@ -1067,16 +1057,13 @@ namespace HtmlScraper
                     theatrelinks.Add("https://www.viva.gr" + att.Value);
                 }
             }
+            // Από αρχείο
+            // With XPath 
+       
             return theatrelinks;
         }
-
-        private void btnNotification_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+        private void btnNotification_Click(object sender, EventArgs e){ }
         private void btnSuccess_Click(object sender, EventArgs e){ }
-
         private void MainForm_Resize(object sender, EventArgs e)
         {
             if(FormWindowState.Minimized == WindowState)
