@@ -56,7 +56,11 @@ namespace HtmlScraper
 
         private void materialCheckBox3_CheckedChanged(object sender, EventArgs e)
         {
-
+            cbEvents.Checked = false;
+            cbProduction.Checked = false;
+            cbOrganizer.Checked = false;
+            cbPersons.Checked = false;
+            cbVenue.Checked = false;
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
@@ -88,16 +92,20 @@ namespace HtmlScraper
                         save.FileName = "Record.csv";
                         save.Filter = "Csv File | *.csv";
                         save.Title = "Save " + getCheckboxesChecked() + " into a csv file";
-                        string sqlSelectAll = "SELECT * from " + getCheckboxesChecked() + " where ID = " + textID.Text;
-                        MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, mysqlCon);
+                        for (int j = 0; j < cbItems.Items.Count; j++)
+                        {
+                            string sqlSelectAll = "SELECT * from " + getCheckboxesChecked() + " where ID = " +cbItems.Items[j].ToString();
+                            MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, mysqlCon);
+                            MyDA.Fill(table);
+                        }
                         MySqlCommand countcomm = new MySqlCommand();
                         countcomm.Connection = mysqlCon;
                         countcomm.CommandText = "SELECT COUNT(*) from " + getCheckboxesChecked() + " where ID = " + textID.Text;
                         countcomm.ExecuteNonQuery();
+                        
                         int num = int.Parse(countcomm.ExecuteScalar().ToString());
                         if (num > 0)
                         {
-                            MyDA.Fill(table);
                             if (save.ShowDialog() == DialogResult.OK)
                             {
                                 WriteToCsvFile(table, save.FileName);
@@ -165,9 +173,12 @@ namespace HtmlScraper
                         save.FileName = "Record.json";
                         save.Filter = "Json File | *.json";
                         save.Title = "Save " + getCheckboxesChecked() + " into a json file";
-
-                        string sqlSelectAll = "SELECT * from " + getCheckboxesChecked() + " WHERE ID=" + textID.Text;
-                        MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, mysqlCon);
+                        for (int j = 0; j < cbItems.Items.Count; j++)
+                        {
+                            string sqlSelectAll = "SELECT * from " + getCheckboxesChecked() + " WHERE ID=" + cbItems.Items[j].ToString();
+                            MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, mysqlCon);
+                            MyDA.Fill(table);
+                        }
                         MySqlCommand countcomm = new MySqlCommand();
                         countcomm.Connection = mysqlCon;
                         countcomm.CommandText = "SELECT COUNT(*) from " + getCheckboxesChecked() + " where ID=" + textID.Text;
@@ -175,7 +186,7 @@ namespace HtmlScraper
                         int num = int.Parse(countcomm.ExecuteScalar().ToString());
                         if (num > 0)
                         {
-                            MyDA.Fill(table);
+                            
                             if (save.ShowDialog() == DialogResult.OK)
                             {
                                 StreamWriter writer = new StreamWriter(save.OpenFile());
@@ -222,12 +233,9 @@ namespace HtmlScraper
                         if (save.ShowDialog() == DialogResult.OK)
                         {
                             var wb = new XLWorkbook();
-                            for (int i = 0; i < countCheckboxes(); i++)
-                            {
-                                var dataTable = GetTable(getCheckboxesChecked());
-                                wb.Worksheets.Add(dataTable);
-                                wb.SaveAs(save.FileName);
-                            }
+                            var dataTable = GetTables(getCheckboxesChecked());
+                            wb.Worksheets.Add(dataTable);
+                            wb.SaveAs(save.FileName);
                         }
                         else
                         {
@@ -245,11 +253,124 @@ namespace HtmlScraper
             MySqlDataAdapter MyDA = new MySqlDataAdapter();
             string s = "";
             DataTable table = new DataTable();
-            string sqlSelectAll = "SELECT * from " + getCheckboxesChecked() + " WHERE ID=" + textID.Text;
+            string sqlSelectAll = "SELECT * FROM " + getCheckboxesChecked() + " WHERE ID=" + textID.Text;
             MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, mysqlCon);
             MyDA.Fill(table);
             table.TableName = tableName;
             return table;
+        }
+        private DataTable GetTables(String tableName)
+        {
+            string connetionString = "SERVER =88.99.136.47;PORT=3306;DATABASE=xuxlffke_scrapingdb;USER=xuxlffke_scraperuser;PASSWORD='lA,wA&5$w]}=';";
+            MySqlConnection mysqlCon = new MySqlConnection(connetionString);
+            MySqlDataAdapter MyDA = new MySqlDataAdapter();
+            string s = "";
+            DataTable table = new DataTable();
+            for (int j = 0; j < cbItems.Items.Count; j++)
+            {
+                string sqlSelectAll = "SELECT * from " + getCheckboxesChecked() + " WHERE ID=" + cbItems.Items[j].ToString();
+                MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, mysqlCon);
+                MyDA.Fill(table);
+            }
+            table.TableName = tableName;
+            return table;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var dataTable = GetTable(getCheckboxesChecked());
+            foreach(DataRow row in dataTable.Rows)
+            {
+                if (row.ItemArray.Length>0 & !row.Field<int>(0).Equals(textID.Text.ToString()) & textID.Text.Length>0)
+                {
+                    cbItems.Items.Add(textID.Text);
+                }
+            }    
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            cbItems.Items.Clear();
+        }
+
+        private void cbItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cbProduction_CheckedChanged(object sender, EventArgs e)
+        {
+            cbEvents.Checked = false;
+            cbContributions.Checked = false;
+            cbOrganizer.Checked = false;
+            cbPersons.Checked = false;
+            cbVenue.Checked = false;
+        }
+
+        private void cbEvents_CheckedChanged(object sender, EventArgs e)
+        {
+            cbProduction.Checked = false;
+            cbContributions.Checked = false;
+            cbOrganizer.Checked = false;
+            cbPersons.Checked = false;
+            cbVenue.Checked = false;
+        }
+
+        private void cbPersons_CheckedChanged(object sender, EventArgs e)
+        {
+            cbEvents.Checked = false;
+            cbContributions.Checked = false;
+            cbOrganizer.Checked = false;
+            cbProduction.Checked = false;
+            cbVenue.Checked = false;
+        }
+
+        private void cbOrganizer_CheckedChanged(object sender, EventArgs e)
+        {
+            cbEvents.Checked = false;
+            cbContributions.Checked = false;
+            cbProduction.Checked = false;
+            cbPersons.Checked = false;
+            cbVenue.Checked = false;
+        }
+
+        private void cbVenue_CheckedChanged(object sender, EventArgs e)
+        {
+            cbEvents.Checked = false;
+            cbContributions.Checked = false;
+            cbOrganizer.Checked = false;
+            cbPersons.Checked = false;
+            cbProduction.Checked = false;
+        }
+
+        private void cbProduction_Click(object sender, EventArgs e)
+        {
+            cbProduction.Checked = true;
+        }
+
+        private void cbEvents_Click(object sender, EventArgs e)
+        {
+            cbEvents.Checked = true;
+        }
+
+        private void cbContributions_Click(object sender, EventArgs e)
+        {
+            cbContributions.Checked = true;
+        }
+
+        private void cbPersons_Click(object sender, EventArgs e)
+        {
+            cbPersons.Checked = true;
+        }
+
+        private void cbOrganizer_Click(object sender, EventArgs e)
+        {
+            cbOrganizer.Checked = true;
+        }
+
+        private void cbVenue_Click(object sender, EventArgs e)
+        {
+            cbVenue.Checked = true;
         }
     }
 }

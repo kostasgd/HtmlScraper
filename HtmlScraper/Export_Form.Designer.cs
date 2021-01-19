@@ -30,18 +30,21 @@ namespace HtmlScraper
         private void InitializeComponent()
         {
             this.groupBoxTables = new System.Windows.Forms.GroupBox();
-            this.cbProduction = new MaterialSkin.Controls.MaterialCheckBox();
-            this.cbEvents = new MaterialSkin.Controls.MaterialCheckBox();
-            this.cbContributions = new MaterialSkin.Controls.MaterialCheckBox();
-            this.cbPersons = new MaterialSkin.Controls.MaterialCheckBox();
-            this.cbOrganizer = new MaterialSkin.Controls.MaterialCheckBox();
             this.cbVenue = new MaterialSkin.Controls.MaterialCheckBox();
+            this.cbOrganizer = new MaterialSkin.Controls.MaterialCheckBox();
+            this.cbPersons = new MaterialSkin.Controls.MaterialCheckBox();
+            this.cbContributions = new MaterialSkin.Controls.MaterialCheckBox();
+            this.cbEvents = new MaterialSkin.Controls.MaterialCheckBox();
+            this.cbProduction = new MaterialSkin.Controls.MaterialCheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textID = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.mrbCsv = new MaterialSkin.Controls.MaterialRaisedButton();
             this.mrbJson = new MaterialSkin.Controls.MaterialRaisedButton();
             this.mrbExcel = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.cbItems = new System.Windows.Forms.ComboBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.groupBoxTables.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,37 +62,59 @@ namespace HtmlScraper
             this.groupBoxTables.TabIndex = 0;
             this.groupBoxTables.TabStop = false;
             // 
-            // cbProduction
+            // cbVenue
             // 
-            this.cbProduction.AutoSize = true;
-            this.cbProduction.Depth = 0;
-            this.cbProduction.Font = new System.Drawing.Font("Roboto", 10F);
-            this.cbProduction.Location = new System.Drawing.Point(17, 26);
-            this.cbProduction.Margin = new System.Windows.Forms.Padding(0);
-            this.cbProduction.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.cbProduction.MouseState = MaterialSkin.MouseState.HOVER;
-            this.cbProduction.Name = "cbProduction";
-            this.cbProduction.Ripple = true;
-            this.cbProduction.Size = new System.Drawing.Size(96, 30);
-            this.cbProduction.TabIndex = 0;
-            this.cbProduction.Text = "production";
-            this.cbProduction.UseVisualStyleBackColor = true;
+            this.cbVenue.AutoSize = true;
+            this.cbVenue.Depth = 0;
+            this.cbVenue.Font = new System.Drawing.Font("Roboto", 10F);
+            this.cbVenue.Location = new System.Drawing.Point(17, 273);
+            this.cbVenue.Margin = new System.Windows.Forms.Padding(0);
+            this.cbVenue.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbVenue.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbVenue.Name = "cbVenue";
+            this.cbVenue.Ripple = true;
+            this.cbVenue.Size = new System.Drawing.Size(67, 30);
+            this.cbVenue.TabIndex = 5;
+            this.cbVenue.Text = "venue";
+            this.cbVenue.UseVisualStyleBackColor = true;
+            this.cbVenue.CheckedChanged += new System.EventHandler(this.cbVenue_CheckedChanged);
+            this.cbVenue.Click += new System.EventHandler(this.cbVenue_Click);
             // 
-            // cbEvents
+            // cbOrganizer
             // 
-            this.cbEvents.AutoSize = true;
-            this.cbEvents.Depth = 0;
-            this.cbEvents.Font = new System.Drawing.Font("Roboto", 10F);
-            this.cbEvents.Location = new System.Drawing.Point(17, 77);
-            this.cbEvents.Margin = new System.Windows.Forms.Padding(0);
-            this.cbEvents.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.cbEvents.MouseState = MaterialSkin.MouseState.HOVER;
-            this.cbEvents.Name = "cbEvents";
-            this.cbEvents.Ripple = true;
-            this.cbEvents.Size = new System.Drawing.Size(71, 30);
-            this.cbEvents.TabIndex = 1;
-            this.cbEvents.Text = "events";
-            this.cbEvents.UseVisualStyleBackColor = true;
+            this.cbOrganizer.AutoSize = true;
+            this.cbOrganizer.Depth = 0;
+            this.cbOrganizer.Font = new System.Drawing.Font("Roboto", 10F);
+            this.cbOrganizer.Location = new System.Drawing.Point(17, 223);
+            this.cbOrganizer.Margin = new System.Windows.Forms.Padding(0);
+            this.cbOrganizer.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbOrganizer.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbOrganizer.Name = "cbOrganizer";
+            this.cbOrganizer.Ripple = true;
+            this.cbOrganizer.Size = new System.Drawing.Size(88, 30);
+            this.cbOrganizer.TabIndex = 4;
+            this.cbOrganizer.Text = "organizer";
+            this.cbOrganizer.UseVisualStyleBackColor = true;
+            this.cbOrganizer.CheckedChanged += new System.EventHandler(this.cbOrganizer_CheckedChanged);
+            this.cbOrganizer.Click += new System.EventHandler(this.cbOrganizer_Click);
+            // 
+            // cbPersons
+            // 
+            this.cbPersons.AutoSize = true;
+            this.cbPersons.Depth = 0;
+            this.cbPersons.Font = new System.Drawing.Font("Roboto", 10F);
+            this.cbPersons.Location = new System.Drawing.Point(17, 174);
+            this.cbPersons.Margin = new System.Windows.Forms.Padding(0);
+            this.cbPersons.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbPersons.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbPersons.Name = "cbPersons";
+            this.cbPersons.Ripple = true;
+            this.cbPersons.Size = new System.Drawing.Size(80, 30);
+            this.cbPersons.TabIndex = 3;
+            this.cbPersons.Text = "persons";
+            this.cbPersons.UseVisualStyleBackColor = true;
+            this.cbPersons.CheckedChanged += new System.EventHandler(this.cbPersons_CheckedChanged);
+            this.cbPersons.Click += new System.EventHandler(this.cbPersons_Click);
             // 
             // cbContributions
             // 
@@ -107,54 +132,43 @@ namespace HtmlScraper
             this.cbContributions.Text = "contributions";
             this.cbContributions.UseVisualStyleBackColor = true;
             this.cbContributions.CheckedChanged += new System.EventHandler(this.materialCheckBox3_CheckedChanged);
+            this.cbContributions.Click += new System.EventHandler(this.cbContributions_Click);
             // 
-            // cbPersons
+            // cbEvents
             // 
-            this.cbPersons.AutoSize = true;
-            this.cbPersons.Depth = 0;
-            this.cbPersons.Font = new System.Drawing.Font("Roboto", 10F);
-            this.cbPersons.Location = new System.Drawing.Point(17, 174);
-            this.cbPersons.Margin = new System.Windows.Forms.Padding(0);
-            this.cbPersons.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.cbPersons.MouseState = MaterialSkin.MouseState.HOVER;
-            this.cbPersons.Name = "cbPersons";
-            this.cbPersons.Ripple = true;
-            this.cbPersons.Size = new System.Drawing.Size(80, 30);
-            this.cbPersons.TabIndex = 3;
-            this.cbPersons.Text = "persons";
-            this.cbPersons.UseVisualStyleBackColor = true;
+            this.cbEvents.AutoSize = true;
+            this.cbEvents.Depth = 0;
+            this.cbEvents.Font = new System.Drawing.Font("Roboto", 10F);
+            this.cbEvents.Location = new System.Drawing.Point(17, 77);
+            this.cbEvents.Margin = new System.Windows.Forms.Padding(0);
+            this.cbEvents.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbEvents.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbEvents.Name = "cbEvents";
+            this.cbEvents.Ripple = true;
+            this.cbEvents.Size = new System.Drawing.Size(71, 30);
+            this.cbEvents.TabIndex = 1;
+            this.cbEvents.Text = "events";
+            this.cbEvents.UseVisualStyleBackColor = true;
+            this.cbEvents.CheckedChanged += new System.EventHandler(this.cbEvents_CheckedChanged);
+            this.cbEvents.Click += new System.EventHandler(this.cbEvents_Click);
             // 
-            // cbOrganizer
+            // cbProduction
             // 
-            this.cbOrganizer.AutoSize = true;
-            this.cbOrganizer.Depth = 0;
-            this.cbOrganizer.Font = new System.Drawing.Font("Roboto", 10F);
-            this.cbOrganizer.Location = new System.Drawing.Point(17, 223);
-            this.cbOrganizer.Margin = new System.Windows.Forms.Padding(0);
-            this.cbOrganizer.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.cbOrganizer.MouseState = MaterialSkin.MouseState.HOVER;
-            this.cbOrganizer.Name = "cbOrganizer";
-            this.cbOrganizer.Ripple = true;
-            this.cbOrganizer.Size = new System.Drawing.Size(88, 30);
-            this.cbOrganizer.TabIndex = 4;
-            this.cbOrganizer.Text = "organizer";
-            this.cbOrganizer.UseVisualStyleBackColor = true;
-            // 
-            // cbVenue
-            // 
-            this.cbVenue.AutoSize = true;
-            this.cbVenue.Depth = 0;
-            this.cbVenue.Font = new System.Drawing.Font("Roboto", 10F);
-            this.cbVenue.Location = new System.Drawing.Point(17, 273);
-            this.cbVenue.Margin = new System.Windows.Forms.Padding(0);
-            this.cbVenue.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.cbVenue.MouseState = MaterialSkin.MouseState.HOVER;
-            this.cbVenue.Name = "cbVenue";
-            this.cbVenue.Ripple = true;
-            this.cbVenue.Size = new System.Drawing.Size(67, 30);
-            this.cbVenue.TabIndex = 5;
-            this.cbVenue.Text = "venue";
-            this.cbVenue.UseVisualStyleBackColor = true;
+            this.cbProduction.AutoSize = true;
+            this.cbProduction.Depth = 0;
+            this.cbProduction.Font = new System.Drawing.Font("Roboto", 10F);
+            this.cbProduction.Location = new System.Drawing.Point(17, 26);
+            this.cbProduction.Margin = new System.Windows.Forms.Padding(0);
+            this.cbProduction.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.cbProduction.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cbProduction.Name = "cbProduction";
+            this.cbProduction.Ripple = true;
+            this.cbProduction.Size = new System.Drawing.Size(96, 30);
+            this.cbProduction.TabIndex = 0;
+            this.cbProduction.Text = "production";
+            this.cbProduction.UseVisualStyleBackColor = true;
+            this.cbProduction.CheckedChanged += new System.EventHandler(this.cbProduction_CheckedChanged);
+            this.cbProduction.Click += new System.EventHandler(this.cbProduction_Click);
             // 
             // label1
             // 
@@ -234,11 +248,48 @@ namespace HtmlScraper
             this.mrbExcel.UseVisualStyleBackColor = true;
             this.mrbExcel.Click += new System.EventHandler(this.mrbExcel_Click);
             // 
+            // cbItems
+            // 
+            this.cbItems.FormattingEnabled = true;
+            this.cbItems.Location = new System.Drawing.Point(263, 167);
+            this.cbItems.MaxDropDownItems = 5;
+            this.cbItems.Name = "cbItems";
+            this.cbItems.Size = new System.Drawing.Size(121, 21);
+            this.cbItems.TabIndex = 10;
+            this.cbItems.SelectedIndexChanged += new System.EventHandler(this.cbItems_SelectedIndexChanged);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btnAdd.Location = new System.Drawing.Point(390, 123);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(67, 31);
+            this.btnAdd.TabIndex = 11;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.DimGray;
+            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btnDelete.Location = new System.Drawing.Point(390, 160);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(67, 34);
+            this.btnDelete.TabIndex = 12;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // Export_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 450);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.cbItems);
             this.Controls.Add(this.mrbExcel);
             this.Controls.Add(this.mrbJson);
             this.Controls.Add(this.mrbCsv);
@@ -273,5 +324,8 @@ namespace HtmlScraper
         private MaterialSkin.Controls.MaterialRaisedButton mrbCsv;
         private MaterialSkin.Controls.MaterialRaisedButton mrbJson;
         private MaterialSkin.Controls.MaterialRaisedButton mrbExcel;
+        private System.Windows.Forms.ComboBox cbItems;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
