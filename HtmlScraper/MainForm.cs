@@ -450,15 +450,18 @@ namespace HtmlScraper
                 driver.FindElement(By.XPath("//a[contains(@class,'cc-btn--accept')]")).Click();
             }
             Thread.Sleep(2000);//δινουμε λιγο χρονο στον  chrome driver για να επιλεξει το openmedia tab αν αυτο υπαρχει
-            Boolean mediaisenabled = false;
+            //Boolean mediaisenabled = false;
+            /*
             if (driver.FindElements(By.Id("openMedia")).Count != 0 && driver.FindElement(By.Id("openMedia")).Enabled)
             {
                  mediaisenabled = driver.FindElement(By.Id("openMedia")).Enabled;
-            }
+            }*/
+            Boolean mediaisenabled = driver.FindElement(By.Id("openMedia")).Displayed;//ελεγχος αν υπαρχει το στοιχειο με boolean μεταβλητη
             //αν υπαρχει το media 
             if (mediaisenabled)
             {
-                driver.FindElement(By.Id("openMedia")).Click();//κανε κλικ στο tab - φορτωνεται με javascript ενα παραθυρο
+                driver.FindElement(By.Id("openMedia")).Click();
+                //driver.FindElement(By.Id("openMedia")).Click();//κανε κλικ στο tab - φορτωνεται με javascript ενα παραθυρο
                 Thread.Sleep(3000);//δωσε χρονο στον driver να φορτωσει ωστε να αναζητησει τα στοιχεια που θελουμε
                 var element = driver.FindElements(By.ClassName("mfp-img")).Count >= 1 ? driver.FindElement(By.ClassName("mfp-img")) : null;//ελεγχος μεσω μεταβλητης αν υπαρχει στοιχειο με κλαση mfp-img, αν δεν υπαρχει επεστρεψε null 
                 if (element != null)
@@ -943,6 +946,7 @@ namespace HtmlScraper
                     else//αλλιως προσθεσε την παρασταση που δεν υπαρχει στην λιστα string 
                     {
                         links.Add(j.ToString());
+                        Console.WriteLine("εισαγωγη νεας παραστασης :"+j.ToString());
                     }
                 }
             }
