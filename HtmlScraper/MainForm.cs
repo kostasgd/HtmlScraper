@@ -4,6 +4,7 @@ using Microsoft.Win32;
 using MySql.Data.MySqlClient;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -103,7 +104,7 @@ namespace HtmlScraper
         private void MySQL_LoadListviewData()
         {
             //δημιουργια συνδεσης με την βαση
-            MySqlConnection mysqlCon = new MySqlConnection("SERVER =88.99.136.47;PORT=3306;DATABASE=xuxlffke_scrapingdb;USER=xuxlffke_scraperuser;PASSWORD='lA,wA&5$w]}=';");
+            MySqlConnection mysqlCon = new MySqlConnection("SERVER =88.99.136.47;PORT=3306;DATABASE=xuxlffke_scrapingdb;USER=xuxlffke_scraperuser;PASSWORD='lA,wA&5$w]}=';convert zero datetime=True");
             mysqlCon.Open();//ανοιγμα συνδεσης 
             MySqlCommand cmd = new MySqlCommand(@"SELECT ID,OrganizerID,Title,Description,URL,Producer,MediaURL,Duration,SystemID,timestamp FROM production", mysqlCon);//δημιουργια αντικειμενου που εκτελει μια mysql εντολη
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);//δημιουργια αντικειμενου που παιρνει το sql αποτελεσμα
@@ -115,51 +116,49 @@ namespace HtmlScraper
             {
                 using (MySqlDataAdapter sda = new MySqlDataAdapter("SELECT * FROM production", con))
                 {
-                    DataTable dt = new DataTable();//δημιουργια ενος datatable
-                    sda.Fill(dt);//γεμισμα του table με το sql command που επιλεγει ολα τα πεδια απο το production table
-                    lvProduction.GridLines = true;//ενεργοποιηση ιδιοτητας για εμφανιση γραμμων μεταξυ των εγγραφων για να τα ξεχωριζουμε πιο ευκολα
-                    lvProduction.View = System.Windows.Forms.View.Details;//επιλογη τροπου με τον οποιο θελουμε να εμφανιζονται τα δεδομενα στο list view
-                    MySqlDataReader rd;//αντικειμενο διασματος ροης sql γραμμων εντολης
-                    rd = cmd.ExecuteReader();//ενσωματονουμε το αποτελεσμα της mysql εντολης στον reader
-                    lvProduction.Items.Clear();//καθαριζουμε τα αντικειμενα που υπηρχαν ηδη στο list view
-                    while (rd.Read())//για οσο διαβαζεις mysql γραμμες , εχω προσθεσει τα πεδια του πινακα , και μεσω παραμετρων παιρνω τις τιμες και τις προσθετω στο αναλογο πεδιο, τελος το προσθετω και προχωραω στην επομενη εγγραφη,το τελος ο datareader πρεπει να κλεισει
+                    lvProduction.View = View.Details;
+                    MySqlDataAdapter ada = new MySqlDataAdapter("SELECT * FROM production", con);
+                    DataTable dt = new DataTable();
+                    ada.Fill(dt);
+                    for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        ListViewItem lv = new ListViewItem(rd.GetInt32(0).ToString());
-                        lv.SubItems.Add(rd.GetInt32(1).ToString());
-                        lv.SubItems.Add(rd.GetString(2));
-                        lv.SubItems.Add(rd.GetString(3).ToString());
-                        lv.SubItems.Add(rd.GetString(4).ToString());
-                        lv.SubItems.Add(rd.GetString(5).ToString());
-                        lv.SubItems.Add(rd.GetString(6).ToString());
-                        lv.SubItems.Add(rd.GetString(7).ToString());
-                        lv.SubItems.Add(rd.GetString(8).ToString());
-                        lv.SubItems.Add(rd.GetDateTime(9).ToString());
-                        lvProduction.Items.Add(lv);
+                        DataRow dr = dt.Rows[i];
+                        ListViewItem listitem = new ListViewItem(dr["ID"].ToString());
+                        listitem.SubItems.Add(dr["OrganizerID"].ToString());
+                        listitem.SubItems.Add(dr["Title"].ToString());
+                        listitem.SubItems.Add(dr["Description"].ToString());
+                        listitem.SubItems.Add(dr["URL"].ToString());
+                        listitem.SubItems.Add(dr["Producer"].ToString());
+                        listitem.SubItems.Add(dr["MediaURL"].ToString());
+                        listitem.SubItems.Add(dr["Duration"].ToString());
+                        listitem.SubItems.Add(dr["SystemID"].ToString());
+                        listitem.SubItems.Add(dr["timestamp"].ToString());
+                        lvProduction.Items.Add(listitem);
                     }
-                    rd.Close();//η ιδια λογικη γινεται και στα επομενα list views
                 }
-                cmd = new MySqlCommand("SELECT ID,ProductionID,VenueID,DateEvent,PriceRange,SystemID,timestamp FROM events", con);
                 using (MySqlDataAdapter sda = new MySqlDataAdapter("SELECT * FROM events", con))
                 {
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                    lvEvents.GridLines = true;
-                    lvEvents.View = System.Windows.Forms.View.Details;
-                    MySqlDataReader rd;
-                    rd = cmd.ExecuteReader();
-                    lvEvents.Items.Clear();
-                    while (rd.Read())
+                    try
                     {
-                        ListViewItem lv = new ListViewItem(rd.GetInt32(0).ToString());
-                        lv.SubItems.Add(rd.GetInt32(1).ToString());
-                        lv.SubItems.Add(rd.GetInt32(2).ToString());
-                        lv.SubItems.Add(rd.GetDateTime(3).ToString());
-                        lv.SubItems.Add(rd.GetString(4).ToString());
-                        lv.SubItems.Add(rd.GetString(5));
-                        lv.SubItems.Add(rd.GetDateTime(6).ToString());
-                        lvEvents.Items.Add(lv);
+                        lvEvents.View = View.Details;
+                        MySqlDataAdapter ada = new MySqlDataAdapter("SELECT * FROM events", con);
+                        DataTable dt = new DataTable();
+                        ada.Fill(dt);
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            DataRow dr = dt.Rows[i];
+                            ListViewItem listitem = new ListViewItem(dr["ID"].ToString());
+                            listitem.SubItems.Add(dr["ProductionID"].ToString());
+                            listitem.SubItems.Add(dr["VenueID"].ToString());
+                            listitem.SubItems.Add(dr["DateEvent"].ToString());
+                            listitem.SubItems.Add(dr["PriceRange"].ToString());
+                            listitem.SubItems.Add(dr["SystemID"].ToString());
+                            listitem.SubItems.Add(dr["timestamp"].ToString());
+                            lvEvents.Items.Add(listitem);
+                        }
+                        
                     }
-                    rd.Close();
+                    catch (MySql.Data.Types.MySqlConversionException ex) { Console.WriteLine(ex.Message); }
                 }
                 cmd = new MySqlCommand(@"SELECT ID,Fullname,SystemID,timestamp FROM persons", mysqlCon);
                 using (MySqlDataAdapter sda = new MySqlDataAdapter("SELECT * FROM persons", con))
@@ -450,30 +449,54 @@ namespace HtmlScraper
                 driver.FindElement(By.XPath("//a[contains(@class,'cc-btn--accept')]")).Click();
             }
             Thread.Sleep(2000);//δινουμε λιγο χρονο στον  chrome driver για να επιλεξει το openmedia tab αν αυτο υπαρχει
-            //Boolean mediaisenabled = false;
+                               //Boolean mediaisenabled = false;
             /*
             if (driver.FindElements(By.Id("openMedia")).Count != 0 && driver.FindElement(By.Id("openMedia")).Enabled)
             {
                  mediaisenabled = driver.FindElement(By.Id("openMedia")).Enabled;
             }*/
-            Boolean mediaisenabled = driver.FindElement(By.Id("openMedia")).Displayed;//ελεγχος αν υπαρχει το στοιχειο με boolean μεταβλητη
-            //αν υπαρχει το media 
-            if (mediaisenabled)
+            //Boolean mediaisenabled = false;//ελεγχος αν υπαρχει το στοιχειο με boolean μεταβλητη
+            //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            // IWebElement browseTab = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("openMedia")));
+            try
             {
-                driver.FindElement(By.Id("openMedia")).Click();
-                //driver.FindElement(By.Id("openMedia")).Click();//κανε κλικ στο tab - φορτωνεται με javascript ενα παραθυρο
-                Thread.Sleep(3000);//δωσε χρονο στον driver να φορτωσει ωστε να αναζητησει τα στοιχεια που θελουμε
-                var element = driver.FindElements(By.ClassName("mfp-img")).Count >= 1 ? driver.FindElement(By.ClassName("mfp-img")) : null;//ελεγχος μεσω μεταβλητης αν υπαρχει στοιχειο με κλαση mfp-img, αν δεν υπαρχει επεστρεψε null 
-                if (element != null)
+                IWebElement mediaisenabled;
+                bool exists = false;
+                if (driver.FindElement(By.Id("openMedia")) != null)
                 {
-                    var src = driver.FindElement(By.ClassName("mfp-img"));//αποθηκευση σε μεταβλητη ο κομβος με κλαση mfp-img 
-                    mediasrc = src.GetAttribute("src");//παρε την τιμη του χαρακτηριστικου src 
+                    Console.WriteLine("not empty");
+                    exists = true;
                 }
-                else//αλλιως δεν βρεθηκε εικονα
+                else
                 {
-                    mediasrc = "Not found..";
+                    exists = false;
+                    Console.WriteLine("empty");
+                }
+                //IWebElement mediaisenabled = driver.FindElement(By.XPath("//*[@id='openMedia']"));
+                //if (mediaisenabled.Displayed)
+                //  {
+                //   mediaisenabled = driver.FindElement(By.XPath("//*[@id='openMedia']"));
+                //}
+                //αν υπαρχει το media 
+                if (exists)
+                {
+                    driver.FindElement(By.Id("openMedia")).Click();
+                    //driver.FindElement(By.Id("openMedia")).Click();//κανε κλικ στο tab - φορτωνεται με javascript ενα παραθυρο
+                    Thread.Sleep(3000);//δωσε χρονο στον driver να φορτωσει ωστε να αναζητησει τα στοιχεια που θελουμε
+                    var element = driver.FindElements(By.ClassName("mfp-img")).Count >= 1 ? driver.FindElement(By.ClassName("mfp-img")) : null;//ελεγχος μεσω μεταβλητης αν υπαρχει στοιχειο με κλαση mfp-img, αν δεν υπαρχει επεστρεψε null 
+                    if (element != null)
+                    {
+                        var src = driver.FindElement(By.ClassName("mfp-img"));//αποθηκευση σε μεταβλητη ο κομβος με κλαση mfp-img 
+                        mediasrc = src.GetAttribute("src");//παρε την τιμη του χαρακτηριστικου src 
+                    }
+                    else//αλλιως δεν βρεθηκε εικονα
+                    {
+                        mediasrc = "Not found..";
+                    }
                 }
             }
+            catch (OpenQA.Selenium.WebDriverTimeoutException ex) { return "Not Found"; }
+            catch (OpenQA.Selenium.NoSuchElementException ex1) { return "Not Found"; }
             driver.Quit();//κλεισιμο του selenium driver
             HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
             HtmlAgilityPack.HtmlDocument doc = web.Load(link);//φορτωση του link για να παρουμε το html εγγραφο 
@@ -594,6 +617,13 @@ namespace HtmlScraper
                         }
                         else if (venueexist == 1)//αν υπαρχει ηδη η αιθουσα
                         {
+                            //^[0-9]{2}:[0-9]{2} για να παρω μονο την πρωτη ωρα αν εχει παραπανω απο μια
+                            Regex regex = new Regex(@"^[0-9]{2}:[0-9]{2}");
+                            Match match = regex.Match(hours[p].Text);
+                            string alternativehour = match.Value;
+                            hour = alternativehour.Split(':')[0];//παρνουμε την ωρα με χαρακτηρα διασπασης το : την αριστερη μερια 
+                            minutes = alternativehour.Split(':')[1];//παρνουμε την ωρα με χαρακτηρα διασπασης το : την δεξια μερια 
+                            Console.WriteLine("Alt hour " + alternativehour);
                             MySqlCommand gmtxm = mysqlCon.CreateCommand();
                             gmtxm.CommandText = "SELECT ID FROM venue WHERE Title = @evven";//παιρνουμε το id της αιθουσας απο τον τιτλο της
                             gmtxm.Parameters.AddWithValue("@evven", eventvenue);
@@ -607,14 +637,7 @@ namespace HtmlScraper
                         }
                     }
                 }
-                else ///αλλιως κανε εισαγωγη της παραστασης 
-                {
-                    MySqlCommand insEvCom = mysqlCon.CreateCommand();
-                    DateTime temp = new DateTime(int.Parse(year), Int32.Parse(month), Int32.Parse(days),0, 0, 0);
-                    date_from = temp.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
-                    insEvCom.CommandText = "INSERT INTO events(ProductionID,VenueID,DateEvent,PriceRange,SystemID) VALUES ('" + prodid + "','" + 81 + "','" + date_from + "','" + prices[p] + "','" + 3 + "')";
-                    insEvCom.ExecuteNonQuery();
-                }
+                
             }
             driver.Quit();//κλεισιμο του selenium driver
             mysqlCon.Close();//κλεισιμο της συνδεσης mysql
