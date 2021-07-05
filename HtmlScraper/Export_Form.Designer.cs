@@ -212,7 +212,7 @@ namespace HtmlScraper
             // mrbCsv
             // 
             this.mrbCsv.Depth = 0;
-            this.mrbCsv.Location = new System.Drawing.Point(463, 107);
+            this.mrbCsv.Location = new System.Drawing.Point(489, 107);
             this.mrbCsv.MouseState = MaterialSkin.MouseState.HOVER;
             this.mrbCsv.Name = "mrbCsv";
             this.mrbCsv.Primary = true;
@@ -225,7 +225,7 @@ namespace HtmlScraper
             // mrbJson
             // 
             this.mrbJson.Depth = 0;
-            this.mrbJson.Location = new System.Drawing.Point(463, 188);
+            this.mrbJson.Location = new System.Drawing.Point(489, 188);
             this.mrbJson.MouseState = MaterialSkin.MouseState.HOVER;
             this.mrbJson.Name = "mrbJson";
             this.mrbJson.Primary = true;
@@ -238,7 +238,7 @@ namespace HtmlScraper
             // mrbExcel
             // 
             this.mrbExcel.Depth = 0;
-            this.mrbExcel.Location = new System.Drawing.Point(463, 274);
+            this.mrbExcel.Location = new System.Drawing.Point(489, 274);
             this.mrbExcel.MouseState = MaterialSkin.MouseState.HOVER;
             this.mrbExcel.Name = "mrbExcel";
             this.mrbExcel.Primary = true;

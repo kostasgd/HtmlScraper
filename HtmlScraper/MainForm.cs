@@ -35,8 +35,10 @@ namespace HtmlScraper
             skinmanager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
             skinmanager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.BlueGrey800, MaterialSkin.Primary.BlueGrey900,
                 MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.LightBlue200, MaterialSkin.TextShade.WHITE);
-            splitContainer1.Panel1.ResetText();// <--
-
+            splitContainer1.Panel1.ResetText();
+            
+            // <--
+            
             //-->ορισμός μεταβλητων για τον timer που θα εκτελειται καθε μία ωρα
             var startTimeSpan = TimeSpan.Zero;
             var periodTimeSpan = TimeSpan.FromMinutes(60);//<--
@@ -55,9 +57,10 @@ namespace HtmlScraper
                     if (checknewlinks().Count > 0)//αν τα link ειναι παραπανω απο 0 τοτε καλεσε την εισαγωγη της παραστασης και εμφανισε με την χρήση της notification φορμας ειδοποιηση επιτυχης εισαγωγής στον χρήστη
                     {
                         insertProduction();
-                        Notification not = new Notification("Επιτυχης εισαγωγη νεας εγγραφής",Color.Green);
+                        Notification not = new Notification("Επιτυχης εισαγωγη νεας εγγραφής", Color.Green);
                         not.ShowDialog();
                     }
+                    getNewEventsIfExists();
                 }, null, startTimeSpan, periodTimeSpan);
             }
             else // αλλιως εμφανισε μηνυμα λάθους και τερματισε το προγραμμα
@@ -96,7 +99,49 @@ namespace HtmlScraper
             }
         }
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e) { }
+        private void getNewEventsIfExists()
+        {
+            MySqlConnection mysqlCon = new MySqlConnection("SERVER =88.99.136.47;PORT=3306;DATABASE=xuxlffke_scrapingdb;USER=xuxlffke_scraperuser;PASSWORD='lA,wA&5$w]}=';convert zero datetime=True");
+            MySqlCommand idexinevents = mysqlCon.CreateCommand();
+            mysqlCon.Open();
+            string mysqlqueryforevents = "SELECT p.ID FROM production p WHERE ID NOT IN(SELECT ProductionID FROM events) AND (`timestamp` > DATE_SUB(now(), INTERVAL 10 DAY));";
+            idexinevents.CommandText = mysqlqueryforevents;//ελεγχω αν το id της παραστασης υπαρχει μεσα στο event table
+            idexinevents.ExecuteNonQuery();//εκτελεση του query
+            //SELECT p.ID FROM production p WHERE ID NOT IN(SELECT ProductionID FROM events)
+            List<String> iddata = new List<String>();
+            List<String> urldata = new List<String>();
 
+            using (MySqlCommand command = new MySqlCommand(mysqlqueryforevents, mysqlCon))
+            {
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        iddata.Add(reader.GetString(0));
+                    }
+                }
+            }
+            mysqlqueryforevents = "SELECT p.URL FROM production p WHERE ID NOT IN(SELECT ProductionID FROM events) AND (`timestamp` > DATE_SUB(now(), INTERVAL 10 DAY));";
+            idexinevents.CommandText = mysqlqueryforevents;//ελεγχω αν το id της παραστασης υπαρχει μεσα στο event table
+            idexinevents.ExecuteNonQuery();//εκτελεση του query
+            using (MySqlCommand command = new MySqlCommand(mysqlqueryforevents, mysqlCon))
+            {
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        urldata.Add(reader.GetString(0));
+                    }
+                }
+            }
+            for(int i = 0; i < urldata.Count; i++)
+            {
+                Console.WriteLine(iddata[i] + "-" + urldata[i]);
+                insertEvent(int.Parse(iddata[i].ToString().Trim()), urldata[i]);
+                Thread.Sleep(2500);
+            }
+            mysqlCon.Close();
+        }
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();//με το κλείσιμο της κεντρικής φορμας εντολή για τερματισμο προγράμματος
@@ -551,10 +596,11 @@ namespace HtmlScraper
             mysqlCon.Open();//ανοιγμα της συνδεσης
             var chromeOptions = new ChromeOptions();//ρυθμισεις του chrome driver
             chromeOptions.AddArguments("headless");//επιλογη ωστε το chrome driver να δουλευει χωρις κεφαλη
+            chromeOptions.AddArgument("no-sandbox");
             var experimentalFlags = new List<string>();
             var driverService = ChromeDriverService.CreateDefaultService();
             driverService.HideCommandPromptWindow = true;//ρυθμιση ετσι ωστε να μην ανοιγει το prompt του selenium
-            ChromeDriver driver = new ChromeDriver(driverService,chromeOptions);//δημιουργια του chrome driver με τις επικειμενες παραμετρους
+            ChromeDriver driver = new ChromeDriver(driverService,chromeOptions, TimeSpan.FromSeconds(60));//δημιουργια του chrome driver με τις επικειμενες παραμετρους
             driver.Navigate().GoToUrl(link);//φορτωση του link 
             experimentalFlags.Add("cookies-without-same-site-must-be-secure@2");
             chromeOptions.AddLocalStatePreference("browser.enabled_labs_experiments",
@@ -580,7 +626,14 @@ namespace HtmlScraper
                 prices.Add(price);//προσθηκη price στην λιστα με τις τιμες 
                 price = "";//αρχικοποιηση string για να μην γεμισει αχρηστες τιμες 
             }
-
+            if (prices.Count == 0 || prices.Count < place.Count)
+            {
+                int remained = place.Count - prices.Count;
+                for(int r=0;r<remained;r++)
+                {
+                    prices.Add("Δεν έχει οριστεί ακόμα / Sold Out");
+                }
+            }
             for (int p = 0; p < place.Count; p++)
             {
                 string s = date[p].Text.Split(' ').Last();//παιρνουμε απο καθε ημερομηνια την μερα και τον μηνα η μορφη ειναι καπως ετσι Σαβ 16/1
@@ -602,40 +655,43 @@ namespace HtmlScraper
                     findcom.ExecuteNonQuery();
                     long venueexist = (long)findcom.ExecuteScalar();//το αποτελεσμα επιστρεφει εναν αριθμο που τον βαζουμε σε μεταβλητη
                     MySqlCommand insvencomm = mysqlCon.CreateCommand();
-                    if (Regex.Match(hours[p].Text, @"[0-9]{1,}[0-9]{1,}:[0-9]{1,}[0-9]{1,}").Success)//αν ολα πανε καλα και η ωρα ειναι συμφωνα με το regular expression
+                    try
                     {
-                        if (venueexist < 1)//αν το θεατρο δεν υπαρχει τοτε 
+                        if (Regex.Match(hours[p].Text, @"[0-9]{1,}[0-9]{1,}:[0-9]{1,}[0-9]{1,}").Success)//αν ολα πανε καλα και η ωρα ειναι συμφωνα με το regular expression
                         {
-                            insvencomm.CommandText = "INSERT INTO `venue`(`Title`, `Address`, `SystemID`) VALUES ('" + eventvenue + "','" + eventaddress + "','" + 3 + "')";//κανε εισαγωγη θεατρου στην βαση
-                            insvencomm.ExecuteNonQuery();//εκτελεση εισαγωγης
-                            MySqlCommand insEvCom = mysqlCon.CreateCommand();
-                            long newid = (long)insvencomm.LastInsertedId;//παιρνουμε το τελευταιο id που εγινε εισαγωγη για να το βαλουμε σαν παραμετρο στο επομενο query εισαγωγης
-                            DateTime temp = new DateTime(int.Parse(year), Int32.Parse(month), Int32.Parse(days), Int32.Parse(hour), Int32.Parse(minutes), 0);//δημιουργια datetime αντικειμενου συμφωνα με τις προηγουμενες μεταβλητες
-                            date_from = temp.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);//μορφοποιηση του αντικειμενου στην επιθυμητη μορφη
-                            insEvCom.CommandText = "INSERT INTO events(ProductionID,VenueID,DateEvent,PriceRange,SystemID) VALUES ('" + prodid + "','" + newid + "','" + date_from + "','" + prices[p] + "','" + 3 + "')";//query εισαγωγης προβολων παραστασεων
-                            insEvCom.ExecuteNonQuery();//εκτελεση query εισαγωγης
+                            if (venueexist < 1)//αν το θεατρο δεν υπαρχει τοτε 
+                            {
+                                insvencomm.CommandText = "INSERT INTO `venue`(`Title`, `Address`, `SystemID`) VALUES ('" + eventvenue + "','" + eventaddress + "','" + 3 + "')";//κανε εισαγωγη θεατρου στην βαση
+                                insvencomm.ExecuteNonQuery();//εκτελεση εισαγωγης
+                                MySqlCommand insEvCom = mysqlCon.CreateCommand();
+                                long newid = (long)insvencomm.LastInsertedId;//παιρνουμε το τελευταιο id που εγινε εισαγωγη για να το βαλουμε σαν παραμετρο στο επομενο query εισαγωγης
+                                DateTime temp = new DateTime(int.Parse(year), Int32.Parse(month), Int32.Parse(days), Int32.Parse(hour), Int32.Parse(minutes), 0);//δημιουργια datetime αντικειμενου συμφωνα με τις προηγουμενες μεταβλητες
+                                date_from = temp.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);//μορφοποιηση του αντικειμενου στην επιθυμητη μορφη
+                                insEvCom.CommandText = "INSERT INTO events(ProductionID,VenueID,DateEvent,PriceRange,SystemID) VALUES ('" + prodid + "','" + newid + "','" + date_from + "','" + prices[p] + "','" + 3 + "')";//query εισαγωγης προβολων παραστασεων
+                                insEvCom.ExecuteNonQuery();//εκτελεση query εισαγωγης
+                            }
+                            else if (venueexist == 1)//αν υπαρχει ηδη η αιθουσα
+                            {
+                                //^[0-9]{2}:[0-9]{2} για να παρω μονο την πρωτη ωρα αν εχει παραπανω απο μια
+                                Regex regex = new Regex(@"^[0-9]{2}:[0-9]{2}");
+                                Match match = regex.Match(hours[p].Text);
+                                string alternativehour = match.Value;
+                                hour = alternativehour.Split(':')[0];//παρνουμε την ωρα με χαρακτηρα διασπασης το : την αριστερη μερια 
+                                minutes = alternativehour.Split(':')[1];//παρνουμε την ωρα με χαρακτηρα διασπασης το : την δεξια μερια 
+                                Console.WriteLine("Alt hour " + alternativehour);
+                                MySqlCommand gmtxm = mysqlCon.CreateCommand();
+                                gmtxm.CommandText = "SELECT ID FROM venue WHERE Title = @evven";//παιρνουμε το id της αιθουσας απο τον τιτλο της
+                                gmtxm.Parameters.AddWithValue("@evven", eventvenue);
+                                var evven = gmtxm.ExecuteScalar();
+                                DateTime temp = new DateTime(int.Parse(year), Int32.Parse(month), Int32.Parse(days), Int32.Parse(hour), Int32.Parse(minutes), 0);//δημιουργια datetime αντικειμενου συμφωνα με τις προηγουμενες μεταβλητες
+                                MySqlCommand insEvent = new MySqlCommand();
+                                insEvent.Connection = mysqlCon;
+                                date_from = temp.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);//μορφοποιηση του αντικειμενου στην επιθυμητη μορφη
+                                insEvent.CommandText = "INSERT INTO events(ProductionID,VenueID,DateEvent,PriceRange,SystemID) VALUES ('" + prodid + "','" + evven.ToString() + "','" + date_from + "','" + prices[p] + "','" + 3 + "')";//query εισαγωγης προβολων παραστασεων
+                                insEvent.ExecuteNonQuery();//εκτελεση query εισαγωγης
+                            }
                         }
-                        else if (venueexist == 1)//αν υπαρχει ηδη η αιθουσα
-                        {
-                            //^[0-9]{2}:[0-9]{2} για να παρω μονο την πρωτη ωρα αν εχει παραπανω απο μια
-                            Regex regex = new Regex(@"^[0-9]{2}:[0-9]{2}");
-                            Match match = regex.Match(hours[p].Text);
-                            string alternativehour = match.Value;
-                            hour = alternativehour.Split(':')[0];//παρνουμε την ωρα με χαρακτηρα διασπασης το : την αριστερη μερια 
-                            minutes = alternativehour.Split(':')[1];//παρνουμε την ωρα με χαρακτηρα διασπασης το : την δεξια μερια 
-                            Console.WriteLine("Alt hour " + alternativehour);
-                            MySqlCommand gmtxm = mysqlCon.CreateCommand();
-                            gmtxm.CommandText = "SELECT ID FROM venue WHERE Title = @evven";//παιρνουμε το id της αιθουσας απο τον τιτλο της
-                            gmtxm.Parameters.AddWithValue("@evven", eventvenue);
-                            var evven = gmtxm.ExecuteScalar();
-                            DateTime temp = new DateTime(int.Parse(year), Int32.Parse(month), Int32.Parse(days), Int32.Parse(hour), Int32.Parse(minutes), 0);//δημιουργια datetime αντικειμενου συμφωνα με τις προηγουμενες μεταβλητες
-                            MySqlCommand insEvent = new MySqlCommand();
-                            insEvent.Connection = mysqlCon;
-                            date_from = temp.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);//μορφοποιηση του αντικειμενου στην επιθυμητη μορφη
-                            insEvent.CommandText = "INSERT INTO events(ProductionID,VenueID,DateEvent,PriceRange,SystemID) VALUES ('" + prodid + "','" + evven.ToString() + "','" + date_from + "','" + prices[p] + "','" + 3 + "')";//query εισαγωγης προβολων παραστασεων
-                            insEvent.ExecuteNonQuery();//εκτελεση query εισαγωγης
-                        }
-                    }
+                    }catch(ArgumentOutOfRangeException ex){ }
                 }
                 
             }
@@ -705,6 +761,7 @@ namespace HtmlScraper
                 }
             }
             catch (System.ArgumentOutOfRangeException ex) { }
+            catch (System.NullReferenceException pp) { }
             mysqlCon.Close();
         }
         //πινακας που περιεχει ανεπιθυμητες λεξεις οι οποιες δεν θελω να γινεται εισαγωγη τους στην βαση
@@ -964,7 +1021,7 @@ namespace HtmlScraper
                     object prodexist = (object)checknew.ExecuteScalar();//δημιουργια προσωρινου oject αντικειμενου οπου ενσωματωνεται το αποτελεσμα του query
                     if (prodexist != null)//αν ειναι null δλδ δεν βρει καινουργια παρασταση
                     {
-                        //Console.WriteLine(venueexist.ToString());αν δεν
+                        //Console.WriteLine(venueexist.ToString());
                     }
                     else//αλλιως προσθεσε την παρασταση που δεν υπαρχει στην λιστα string 
                     {
@@ -1010,6 +1067,17 @@ namespace HtmlScraper
            this.BringToFront();
            this.Activate();
            this.WindowState = FormWindowState.Normal;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            MainBoard mb = new MainBoard();
+            mb.ShowDialog();
         }
     }
 }

@@ -33,6 +33,7 @@ namespace HtmlScraper
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnRefreshLoad = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -127,7 +128,7 @@ namespace HtmlScraper
             this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Location = new System.Drawing.Point(0, 65);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1365, 526);
+            this.panel1.Size = new System.Drawing.Size(1530, 589);
             this.panel1.TabIndex = 0;
             // 
             // splitContainer1
@@ -141,15 +142,31 @@ namespace HtmlScraper
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.DimGray;
+            this.splitContainer1.Panel1.Controls.Add(this.materialRaisedButton1);
             this.splitContainer1.Panel1.Controls.Add(this.btnRefreshLoad);
             this.splitContainer1.Panel1.Controls.Add(this.btnExport);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(1365, 526);
-            this.splitContainer1.SplitterDistance = 116;
+            this.splitContainer1.Size = new System.Drawing.Size(1530, 589);
+            this.splitContainer1.SplitterDistance = 129;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.materialRaisedButton1.Location = new System.Drawing.Point(610, 0);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(299, 126);
+            this.materialRaisedButton1.TabIndex = 2;
+            this.materialRaisedButton1.Text = "Board";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // btnRefreshLoad
             // 
@@ -157,9 +174,9 @@ namespace HtmlScraper
             this.btnRefreshLoad.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnRefreshLoad.Image = global::HtmlScraper.Properties.Resources.icons8_refresh_40;
             this.btnRefreshLoad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefreshLoad.Location = new System.Drawing.Point(1172, 0);
+            this.btnRefreshLoad.Location = new System.Drawing.Point(1337, 0);
             this.btnRefreshLoad.Name = "btnRefreshLoad";
-            this.btnRefreshLoad.Size = new System.Drawing.Size(193, 116);
+            this.btnRefreshLoad.Size = new System.Drawing.Size(193, 129);
             this.btnRefreshLoad.TabIndex = 1;
             this.btnRefreshLoad.Text = "Refresh/Load";
             this.btnRefreshLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -174,7 +191,7 @@ namespace HtmlScraper
             this.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExport.Location = new System.Drawing.Point(0, 0);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(194, 116);
+            this.btnExport.Size = new System.Drawing.Size(194, 129);
             this.btnExport.TabIndex = 0;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = true;
@@ -195,7 +212,7 @@ namespace HtmlScraper
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1365, 406);
+            this.tabControl1.Size = new System.Drawing.Size(1530, 456);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPageProduction
@@ -206,7 +223,7 @@ namespace HtmlScraper
             this.tabPageProduction.Location = new System.Drawing.Point(4, 48);
             this.tabPageProduction.Name = "tabPageProduction";
             this.tabPageProduction.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageProduction.Size = new System.Drawing.Size(1357, 354);
+            this.tabPageProduction.Size = new System.Drawing.Size(1522, 404);
             this.tabPageProduction.TabIndex = 0;
             this.tabPageProduction.Text = "Production";
             this.tabPageProduction.UseVisualStyleBackColor = true;
@@ -217,7 +234,7 @@ namespace HtmlScraper
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1349, 346);
+            this.panel2.Size = new System.Drawing.Size(1514, 396);
             this.panel2.TabIndex = 1;
             // 
             // lvProduction
@@ -242,7 +259,7 @@ namespace HtmlScraper
             this.lvProduction.HoverSelection = true;
             this.lvProduction.Location = new System.Drawing.Point(0, 0);
             this.lvProduction.Name = "lvProduction";
-            this.lvProduction.Size = new System.Drawing.Size(1349, 346);
+            this.lvProduction.Size = new System.Drawing.Size(1514, 396);
             this.lvProduction.TabIndex = 0;
             this.lvProduction.UseCompatibleStateImageBehavior = false;
             this.lvProduction.View = System.Windows.Forms.View.Details;
@@ -290,12 +307,12 @@ namespace HtmlScraper
             // columnHeaderSystemID
             // 
             this.columnHeaderSystemID.Text = "SystemID";
-            this.columnHeaderSystemID.Width = 88;
+            this.columnHeaderSystemID.Width = 122;
             // 
             // columnHeaderProdTime
             // 
             this.columnHeaderProdTime.Text = "Timestamp";
-            this.columnHeaderProdTime.Width = 97;
+            this.columnHeaderProdTime.Width = 189;
             // 
             // tabPageEvents
             // 
@@ -304,7 +321,7 @@ namespace HtmlScraper
             this.tabPageEvents.Location = new System.Drawing.Point(4, 48);
             this.tabPageEvents.Name = "tabPageEvents";
             this.tabPageEvents.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageEvents.Size = new System.Drawing.Size(1357, 354);
+            this.tabPageEvents.Size = new System.Drawing.Size(1522, 404);
             this.tabPageEvents.TabIndex = 1;
             this.tabPageEvents.Text = "Events";
             this.tabPageEvents.UseVisualStyleBackColor = true;
@@ -324,7 +341,7 @@ namespace HtmlScraper
             this.lvEvents.HideSelection = false;
             this.lvEvents.Location = new System.Drawing.Point(3, 3);
             this.lvEvents.Name = "lvEvents";
-            this.lvEvents.Size = new System.Drawing.Size(1349, 346);
+            this.lvEvents.Size = new System.Drawing.Size(1514, 396);
             this.lvEvents.TabIndex = 0;
             this.lvEvents.UseCompatibleStateImageBehavior = false;
             this.lvEvents.View = System.Windows.Forms.View.Details;
@@ -370,7 +387,7 @@ namespace HtmlScraper
             this.tabPagePersons.Controls.Add(this.lvPeople);
             this.tabPagePersons.Location = new System.Drawing.Point(4, 48);
             this.tabPagePersons.Name = "tabPagePersons";
-            this.tabPagePersons.Size = new System.Drawing.Size(1357, 354);
+            this.tabPagePersons.Size = new System.Drawing.Size(1522, 404);
             this.tabPagePersons.TabIndex = 2;
             this.tabPagePersons.Text = "Persons";
             this.tabPagePersons.UseVisualStyleBackColor = true;
@@ -387,7 +404,7 @@ namespace HtmlScraper
             this.lvPeople.HideSelection = false;
             this.lvPeople.Location = new System.Drawing.Point(0, 0);
             this.lvPeople.Name = "lvPeople";
-            this.lvPeople.Size = new System.Drawing.Size(1355, 352);
+            this.lvPeople.Size = new System.Drawing.Size(1520, 402);
             this.lvPeople.TabIndex = 0;
             this.lvPeople.UseCompatibleStateImageBehavior = false;
             this.lvPeople.View = System.Windows.Forms.View.Details;
@@ -418,7 +435,7 @@ namespace HtmlScraper
             this.tabPageContributions.Controls.Add(this.lvContributions);
             this.tabPageContributions.Location = new System.Drawing.Point(4, 48);
             this.tabPageContributions.Name = "tabPageContributions";
-            this.tabPageContributions.Size = new System.Drawing.Size(1357, 354);
+            this.tabPageContributions.Size = new System.Drawing.Size(1522, 404);
             this.tabPageContributions.TabIndex = 3;
             this.tabPageContributions.Text = "Contributions";
             this.tabPageContributions.UseVisualStyleBackColor = true;
@@ -438,7 +455,7 @@ namespace HtmlScraper
             this.lvContributions.HideSelection = false;
             this.lvContributions.Location = new System.Drawing.Point(0, 0);
             this.lvContributions.Name = "lvContributions";
-            this.lvContributions.Size = new System.Drawing.Size(1355, 352);
+            this.lvContributions.Size = new System.Drawing.Size(1520, 402);
             this.lvContributions.TabIndex = 0;
             this.lvContributions.UseCompatibleStateImageBehavior = false;
             this.lvContributions.View = System.Windows.Forms.View.Details;
@@ -483,7 +500,7 @@ namespace HtmlScraper
             this.tabPageVenue.Controls.Add(this.lvVenue);
             this.tabPageVenue.Location = new System.Drawing.Point(4, 48);
             this.tabPageVenue.Name = "tabPageVenue";
-            this.tabPageVenue.Size = new System.Drawing.Size(1357, 354);
+            this.tabPageVenue.Size = new System.Drawing.Size(1522, 404);
             this.tabPageVenue.TabIndex = 4;
             this.tabPageVenue.Text = "Venue";
             this.tabPageVenue.UseVisualStyleBackColor = true;
@@ -501,7 +518,7 @@ namespace HtmlScraper
             this.lvVenue.HideSelection = false;
             this.lvVenue.Location = new System.Drawing.Point(0, 0);
             this.lvVenue.Name = "lvVenue";
-            this.lvVenue.Size = new System.Drawing.Size(1357, 354);
+            this.lvVenue.Size = new System.Drawing.Size(1522, 404);
             this.lvVenue.TabIndex = 0;
             this.lvVenue.UseCompatibleStateImageBehavior = false;
             this.lvVenue.View = System.Windows.Forms.View.Details;
@@ -536,7 +553,7 @@ namespace HtmlScraper
             this.tabPageRoles.Controls.Add(this.lvRoles);
             this.tabPageRoles.Location = new System.Drawing.Point(4, 48);
             this.tabPageRoles.Name = "tabPageRoles";
-            this.tabPageRoles.Size = new System.Drawing.Size(1357, 354);
+            this.tabPageRoles.Size = new System.Drawing.Size(1522, 404);
             this.tabPageRoles.TabIndex = 5;
             this.tabPageRoles.Text = "Roles";
             this.tabPageRoles.UseVisualStyleBackColor = true;
@@ -553,7 +570,7 @@ namespace HtmlScraper
             this.lvRoles.HideSelection = false;
             this.lvRoles.Location = new System.Drawing.Point(0, 0);
             this.lvRoles.Name = "lvRoles";
-            this.lvRoles.Size = new System.Drawing.Size(1357, 354);
+            this.lvRoles.Size = new System.Drawing.Size(1522, 404);
             this.lvRoles.TabIndex = 0;
             this.lvRoles.UseCompatibleStateImageBehavior = false;
             this.lvRoles.View = System.Windows.Forms.View.Details;
@@ -583,7 +600,7 @@ namespace HtmlScraper
             this.tabPageOrganizer.Controls.Add(this.lvOrganizer);
             this.tabPageOrganizer.Location = new System.Drawing.Point(4, 48);
             this.tabPageOrganizer.Name = "tabPageOrganizer";
-            this.tabPageOrganizer.Size = new System.Drawing.Size(1357, 354);
+            this.tabPageOrganizer.Size = new System.Drawing.Size(1522, 404);
             this.tabPageOrganizer.TabIndex = 6;
             this.tabPageOrganizer.Text = "Organizer";
             this.tabPageOrganizer.UseVisualStyleBackColor = true;
@@ -607,7 +624,7 @@ namespace HtmlScraper
             this.lvOrganizer.HideSelection = false;
             this.lvOrganizer.Location = new System.Drawing.Point(0, 0);
             this.lvOrganizer.Name = "lvOrganizer";
-            this.lvOrganizer.Size = new System.Drawing.Size(1357, 354);
+            this.lvOrganizer.Size = new System.Drawing.Size(1522, 404);
             this.lvOrganizer.TabIndex = 0;
             this.lvOrganizer.UseCompatibleStateImageBehavior = false;
             this.lvOrganizer.View = System.Windows.Forms.View.Details;
@@ -695,7 +712,7 @@ namespace HtmlScraper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1366, 588);
+            this.ClientSize = new System.Drawing.Size(1531, 651);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -703,6 +720,7 @@ namespace HtmlScraper
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ScrapMeNow";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -796,5 +814,6 @@ namespace HtmlScraper
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
     }
 }
